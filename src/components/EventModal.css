@@ -1,0 +1,143 @@
+p {
+  margin: 0;
+}
+
+.btn-close {
+  margin-left: 1em !important;
+}
+
+.event-edit-icon {
+  /* color: var(--background-green); */
+  font-size: 1.1em;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.event-edit-icon:hover {
+  opacity: 0.8;
+}
+
+.activity-infos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.activity-name {
+  font-size: 1.1em;
+}
+
+.organisateur-block {
+  padding: 1rem;
+  background: linear-gradient(10deg, #ffd966, #ff9b83, #ff817b, #ff5757);
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.organisateur-avatar {
+  width: 10rem;
+}
+
+.organisateur-infos {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+}
+
+.organisateur-name {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.organisateur-rating {
+  align-self: flex-end;
+}
+
+.event-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.event-details {
+  width: 50%;
+}
+
+.event-where-when {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.event-participants {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.event-participants-max {
+  font-size: 1.1em;
+  align-self: flex-end;
+}
+
+.event-description {
+  margin-top: 10px;
+  padding: 1rem;
+  background: var(--background-green);
+}
+
+.event-map {
+  width: 100%;
+  height: 200px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-footer-participant {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (min-width: 750px) {
+  .modal-footer-participant {
+    font-size: 1.4em;
+  }
+}
+
+.modal-btn,
+.modal-btn:active {
+  font-size: 1.5em;
+  background-color: var(--background-primary) !important;
+  border: none;
+}
+
+.modal-btn:hover {
+  background: var(--background-yellow) !important;
+}
+
+.btn-participant,
+.btn-participant:active {
+  font-size: 0.9em;
+}
+
+.event-message {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.event-message-success {
+  font-weight: bold;
+  background-color: var(--background-green);
+  border: none;
+  margin-bottom: 0;
+}
+
+.blur {
+  /* filter: blur(2px); */
+  backdrop-filter: blur(10px);
+}

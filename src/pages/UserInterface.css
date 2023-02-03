@@ -1,0 +1,83 @@
+.bandeau-user {
+  background: linear-gradient(10deg, #ffd966, #ff9b83, #ff817b, #ff5757);
+  font-size: smaller;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  position: relative;
+}
+/* 
+.image-users {
+  border-radius: 100px;
+} */
+
+.bonjour-user {
+  margin-left: 30px;
+}
+
+.ProcheDeChezVous {
+  font-weight: bold;
+  margin: 20px;
+}
+
+.evenementavenir {
+  margin: 20px;
+  font-weight: bold;
+}
+
+.EvenementsPassés {
+  margin: 20px;
+  font-weight: bold;
+}
+.ProchainEvenementOrganisé {
+  margin: 20px;
+  font-weight: bold;
+}
+.button-UI-edit-profil {
+  position: absolute;
+  /* width: 13px; */
+  border: none;
+  /* background-color: var(--background-primary); */
+  font-size: 1.5em;
+  bottom: 1.2px;
+  left: 4.8rem;
+}
+/* .button-UI-edit-profil:hover,
+.button-UI-edit-profil:active,
+.button-UI-edit-profil:focus {
+  background-color: var(--background-yellow) !important;
+} */
+
+@media (min-width: 768px) {
+  .bandeau-user {
+    background: linear-gradient(10deg, #ffd966, #ff9b83, #ff817b, #ff5757);
+    height: 200px;
+    display: flex;
+
+    align-items: center;
+    /* padding-left: 15px; */
+  }
+  .ProcheDeChezVous {
+    font-size: 1.3em;
+  }
+  .ProchainEvenement {
+    font-size: 1.3em;
+  }
+  .EvenementsPassés {
+    font-size: 1.3em;
+  }
+  .ProchainEvenementOrganisé {
+    font-size: 1.3em;
+  }
+  .button-UI-edit-profil {
+    position: absolute;
+    width: 25px;
+    border: none;
+    /* background-color: var(--background-primary); */
+    font-size: 2.3em;
+    top: 9.3rem;
+    left: 9.3rem;
+    margin: 5px;
+  }
+}

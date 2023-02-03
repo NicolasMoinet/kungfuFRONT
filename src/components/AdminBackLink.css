@@ -1,0 +1,13 @@
+.admin-link {
+  display: block;
+  background-color: var(--background-primary);
+  border: none;
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.admin-link:hover,
+.admin-link:focus,
+.admin-link:active {
+  background-color: var(--background-yellow) !important;
+}

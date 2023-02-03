@@ -1,0 +1,45 @@
+.headerLP {
+  background-color: white;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+img {
+  max-width: 100%;
+  height: 100%;
+}
+
+.logoContainer {
+  width: 140px;
+}
+
+.bonjour-user {
+  font-size: x-small;
+}
+.bandeau-user {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.button-Sign-Log {
+  border: none;
+  background-color: var(--background-primary);
+  font-size: 0.8em;
+  margin: 5px;
+}
+.button-Sign-Log:hover,
+.button-Sign-Log:active,
+.button-Sign-Log:focus {
+  background-color: var(--background-yellow) !important;
+}
+
+@media (min-width: 768px) {
+  .button-Sign-Log {
+    font-size: 1em;
+  }
+  .bonjour-user {
+    font-size: 1.3em;
+  }
+}

@@ -1,0 +1,47 @@
+.admin-title {
+  text-align: center;
+}
+
+.admin-dashboard {
+  margin-block: 2rem;
+}
+
+.admin-dashboard-title {
+  text-align: center;
+  margin: 0;
+}
+
+.admin-dashboard-stats {
+  margin-bottom: 1rem;
+}
+
+.admin-list-infos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-list-icon {
+  color: var(--background-primary);
+  cursor: pointer;
+  font-size: 1.1em;
+}
+
+.admin-list-icon:hover {
+  color: var(--background-yellow);
+}
+
+.modal-header-infos {
+  display: flex;
+  align-items: center;
+}
+
+.delete-icon {
+  font-size: 1.3em;
+  margin-left: 1em;
+  cursor: pointer;
+}
+
+.delete-icon:hover {
+  opacity: 0.7;
+}

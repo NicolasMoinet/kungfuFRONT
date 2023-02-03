@@ -1,0 +1,11 @@
+.button-signup {
+  background-color: var(--background-primary);
+  border: none;
+  align-items: center;
+}
+
+.button-signup:hover,
+.button-signup:focus,
+.button-signup:active {
+  background-color: var(--background-yellow) !important;
+}

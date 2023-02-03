@@ -1,0 +1,40 @@
+.groupInput {
+  background: linear-gradient(25deg, #ffd966, #ff9b83, #ff817b, #ff5757);
+  padding: 1rem;
+  padding-top: 2rem;
+}
+.rangeButtonNumber {
+  display: grid;
+  justify-content: center;
+  color: white;
+  font-size: 1.2em;
+}
+.labelRange {
+  display: grid;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.container-buttonSUPP {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.deleteButton {
+  background: linear-gradient(125deg, #c9e265, #e4dd66, #fbde7e, #f1eeb1);
+  color: black;
+  border: none;
+}
+.deleteButton:hover {
+  /* opacity: 0.7; */
+  background-color: var(--background-green);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  color: black;
+}
+@media (min-width: 720px) {
+  .rechercheContenair {
+    max-width: 90% !important;
+  }
+}

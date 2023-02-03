@@ -1,0 +1,8 @@
+.toast-container {
+  position: fixed !important;
+}
+
+.toast {
+  background-color: var(--background-green) !important;
+  border: none;
+}

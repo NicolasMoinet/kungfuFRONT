@@ -1,0 +1,16 @@
+.connexion-container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.button-signin {
+  background-color: var(--background-primary);
+  border: none;
+}
+
+.button-signin:hover,
+.button-signin:focus .button-signin:active {
+  background-color: var(--background-yellow) !important;
+}

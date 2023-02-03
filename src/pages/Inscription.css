@@ -1,0 +1,15 @@
+.button-signup {
+  margin-top: 2rem;
+  background-color: var(--background-primary);
+  border: none;
+  align-items: center;
+}
+
+.button-signin:hover,
+.button-signin:focus .button-signin:active {
+  background-color: var(--background-yellow) !important;
+}
+
+.inscription-title {
+  font-size: 2.4em;
+}

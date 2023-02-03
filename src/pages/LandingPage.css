@@ -1,0 +1,108 @@
+.landing-page {
+  height: 100vh;
+}
+
+.section-slogan {
+  background: rgb(19, 19, 19);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 15px;
+  /* margin-bottom: 20px; */
+}
+
+.iconAM {
+  margin-top: 50px;
+  width: 320px;
+  font-size: 40px;
+  align-items: center;
+}
+
+.iconAM2 {
+  margin-top: 20px;
+  width: 320px;
+  font-size: 40px;
+  align-items: center;
+}
+
+.comment-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.photo-bandeau {
+  display: flex;
+  align-items: baseline;
+}
+
+.text-slogan {
+  color: white;
+  font-size: 1.2em;
+  width: 50%;
+}
+
+.image-slogan {
+  max-width: 100%;
+  height: 100%;
+}
+
+.titleLP {
+  text-align: center;
+  margin-top: 0px;
+}
+.textLP {
+  font-size: small;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.lireAM {
+  font-size: small;
+}
+
+.section-page {
+  padding-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+  .section-slogan {
+    height: 75vh;
+    padding-left: 40px;
+    justify-content: space-around;
+  }
+  .photo-bandeau {
+    display: flex;
+    align-items: baseline;
+  }
+  .section-page {
+    background: linear-gradient(105deg, #eeeca2, white, white, #fdefbb);
+    padding-bottom: 30px;
+  }
+  .text-slogan {
+    font-size: 2.3em;
+    width: 60%;
+  }
+  .image-nico {
+    width: 110px;
+  }
+  .image-safae {
+    width: 110px;
+  }
+  .imgAM {
+    width: 370px;
+    height: 320px;
+  }
+  .bandeau-article-image {
+    width: 390px;
+    height: 330px;
+    margin: 0 auto;
+    padding: 10px;
+    box-shadow: black;
+    border: black;
+  }
+  .ProcheDeChezVousLP {
+    font-size: 1.5em;
+  }
+}

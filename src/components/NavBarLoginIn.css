@@ -1,0 +1,18 @@
+.navbar-login-in {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: small;
+  margin-left: 3px;
+  margin-top: 2px;
+}
+.slogan {
+  font-size: medium;
+  margin-left: 15px;
+}
+
+@media (min-width: 768px) {
+  .navbar-login-in {
+    display: none;
+  }
+}
