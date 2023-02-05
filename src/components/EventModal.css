@@ -30,7 +30,7 @@ p {
 
 .organisateur-block {
   padding: 1rem;
-  background: linear-gradient(10deg, #ffd966, #ff9b83, #ff817b, #ff5757);
+  background: #af88f4;
   display: flex;
   gap: 20px;
   align-items: center;
@@ -49,10 +49,6 @@ p {
 .organisateur-name {
   font-weight: bold;
   font-size: 1.2em;
-}
-
-.organisateur-rating {
-  align-self: flex-end;
 }
 
 .event-content {
@@ -84,12 +80,7 @@ p {
 .event-description {
   margin-top: 10px;
   padding: 1rem;
-  background: var(--background-green);
-}
-
-.event-map {
-  width: 100%;
-  height: 200px;
+  background: #af88f4;
 }
 
 .modal-footer {
@@ -111,12 +102,12 @@ p {
 .modal-btn,
 .modal-btn:active {
   font-size: 1.5em;
-  background-color: var(--background-primary) !important;
+  background-color: #af88f4 !important;
   border: none;
 }
 
 .modal-btn:hover {
-  background: var(--background-yellow) !important;
+  background: #242269 !important;
 }
 
 .btn-participant,
@@ -132,7 +123,7 @@ p {
 
 .event-message-success {
   font-weight: bold;
-  background-color: var(--background-green);
+  background-color: #89e294;
   border: none;
   margin-bottom: 0;
 }

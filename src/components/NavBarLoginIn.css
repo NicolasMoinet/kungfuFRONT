@@ -5,6 +5,7 @@
   font-size: small;
   margin-left: 3px;
   margin-top: 2px;
+  z-index: 1002;
 }
 .slogan {
   font-size: medium;

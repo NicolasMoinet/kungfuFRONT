@@ -14,8 +14,6 @@ import { useAuth } from '../context/AuthContext';
 const LandingPage = () => {
   const { events } = useEvents();
   const { currentUser } = useAuth();
-  
-
 
   return (
     <>
@@ -23,16 +21,28 @@ const LandingPage = () => {
         {currentUser ? <NavLayout /> : <Header />}
         {/* si l'utilisateur est deja connecte on voudrait voir le composent Navlo que le comp Header  */}
         <section className='section-slogan'>
-          <div className='text-slogan'>ONLY ONE OPPONENT : YOURSELF </div>
-          <div className='photo-bandeau'>
-            <div className='image-nico'>
-              <img className='image-bandeau'
-                src='/assets/BandeauACC.svg'
-                alt='bandeau'
-              />
-            </div>
+          {/* <img className='Fond-head' src='vector4.svg' alt='Montagne'/> */}
+          <div className='Titre'>
+            <h1>Xiong Ying Wushuguan</h1>
+            <p> ONLY ONE OPPONENT : YOURSELF </p>
           </div>
         </section>
+        {/* <section> */}
+        {/* <div>
+            <div>
+              <h4>Bienvenue sur le site de l'association</h4>
+            </div>
+            <div>
+              <h3>L'ecole de l'aigle bienveillant</h3>
+              <p> 
+                Créer récemment, notre école est issue d'une volonté commune de
+                se retrouver autour
+                blablabalbalbablabalbalalblballbalbalbalbalblabl{' '}
+              </p>
+            </div> */}
+        {/* </div> */}
+
+        {/* </section> */}
       </div>
       <Footer />
     </>

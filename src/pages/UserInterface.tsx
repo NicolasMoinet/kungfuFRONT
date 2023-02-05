@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-
+import { faLeaf, faMagnifyingGlass, faMarker } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import NavBarLoginIn from '../components/NavBarLoginIn';
 import ThumbnailEvent from '../components/ThumbnailEvent';
 import './UserInterface.css';
@@ -13,7 +14,6 @@ import useAxiosPrivate from '../api/useAxiosPrivate';
 //on déclare les variables dont on va avoir besoin pour les initialiser
 //
 let eventsListUserParticipant: EventType[] = [];
-
 let nombreEventInscritAVenir: Number = 0;
 let nombreEventPast: Number = 0;
 let nombreNextEventOrganise: Number = 0;
@@ -28,9 +28,7 @@ const UserInterface = () => {
   const [listEvents, setListEvents] = useState<EventType[]>([]);
 
   useEffect(() => {
-    console.log('landingpage useeffect events', events);
-
-    console.log('userInter current user id', currentUser?.id);
+    
     axiosPrivate
       .get(
         `http://localhost:8080/api/users/events/participant/${currentUser?.id}`
@@ -109,25 +107,28 @@ const UserInterface = () => {
         <NavBarLoginIn />
       </div>
       <section className='bandeau-user'>
-        
         <Link to='/user/profile'>
-          <div className='button-UI-edit-profil'>📝</div>
+          <div className='button-UI-edit-profil'>
+            <FontAwesomeIcon
+              icon={faMarker}
+              color={'white'}
+              className='iconNB'
+            />
+          </div>
         </Link>
 
         <div className='bonjour-user'>
           Bonjour {currentUser?.name},
           <p>
             {nombreEventInscritAVenir < 1
-              ? `Vous n'êtes actuellement inscrit à aucun événement, ne lâchez rien!  `
-              : `Vous êtes actuellement inscrit à ${nombreEventInscritAVenir} évènement(s), BRAVO!!! continuez comme cela... `}
+              ? `Vous n'êtes actuellement inscrit à aucun événement, n'hesitez pas !  `
+              : `Vous êtes actuellement inscrit à ${nombreEventInscritAVenir} évènement(s) `}
           </p>
-          
         </div>
         <div className='photo-bandeau-user'></div>
       </section>
       <section className='caroussel'>
         <div className='ProcheDeChezVous'> Évènement à venir :</div>
-        
 
         {nombreEventInscritAVenir > 0 && (
           <div className='evenementavenir'> Prochains évènements :</div>

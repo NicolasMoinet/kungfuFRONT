@@ -13,9 +13,6 @@ export const errorInfo = (key: string): string => {
     case 'name':
       message = 'Le pseudo doit forcément commencer et terminer par une lettre';
       break;
-    case 'age':
-      message = "Format de l'âge invalide";
-      break;
     case 'city':
       message = 'Format de la ville invalide';
       break;
@@ -25,9 +22,7 @@ export const errorInfo = (key: string): string => {
     case 'title':
       message = 'Format du titre invalide';
       break;
-    case 'maxParticipants':
-      message = 'Format des participants invalide';
-      break;
+    
   }
   console.log('error message : ', message);
   return message;

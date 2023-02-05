@@ -1,4 +1,4 @@
-import { faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faLeaf } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Button, OverlayTrigger, Popover } from 'react-bootstrap';
@@ -17,7 +17,7 @@ const FormulaireContact = () => {
   return (
     <div className='ContactForm'>
       <section className='bandeauFC'>
-        <img className='bandeauLP' src='/assets/BeandeauACC.svg' alt='fond' />;
+      {/* <img className='bandeauLP' src='/assets/BeandeauACC.svg' alt='fond' />; */}
         <h2 className='titleFC'>Formulaire Contact </h2>
       </section>
       <div className='containerFC'>
@@ -25,8 +25,8 @@ const FormulaireContact = () => {
           <Link to={'/'} className='iconFC'>
             <div className='nav-link nav-iconFC'>
               <FontAwesomeIcon
-                icon={faHouse}
-                color={'black'}
+                icon={faLeaf}
+                color={'#af88f4'}
                 className='iconNB'
               />
             </div>

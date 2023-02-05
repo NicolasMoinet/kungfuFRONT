@@ -16,11 +16,6 @@ export const inputRegex = (key: string): RegExp => {
       // Vérifie que le pseudo commence et termine par une lettre
       regex = /^[a-zA-ZÀ-ÿ]+.*[a-zA-ZÀ-ÿ0-9]$/;
       break;
-    case 'age':
-    case 'maxParticipants':
-      // Vérifie que l'âge contient bien uniquement des chiffres
-      regex = /^\d+$/;
-      break;
     case 'description':
       // Vérifie que la description commence par une lettre et peut contenir un espace
       regex = /^[a-zA-ZÀ-ÿ]+.*(\r\n|\r|\n)*.*$/;

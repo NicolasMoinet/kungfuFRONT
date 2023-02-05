@@ -4,16 +4,10 @@ import { Alert, Button, OverlayTrigger, Popover } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
 import Image from 'react-bootstrap/Image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faPencil,
-  faPersonRunning,
-  faStar,
-} from '@fortawesome/free-solid-svg-icons';
+import { faPencil } from '@fortawesome/free-solid-svg-icons';
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
-
 //import EventUpdate from './EventUpdate';
 import { formatDate } from '../models/formats/date';
-import { orgaPicture } from '../models/formats/picture';
 import { EventType } from '../models/interface/Event';
 import { useAuth } from '../context/AuthContext';
 import useAxiosPrivate from '../api/useAxiosPrivate';
@@ -45,6 +39,9 @@ export const eventKeys = {
   title: 'Titre',
   date: 'Date',
   time: 'Time',
+  address: 'Address',
+  postalCode: 'PostalCode',
+  city: 'City',
   description: 'Description',
 };
 
@@ -68,14 +65,6 @@ const EventModal = ({
   const eventDateTimeMS = Date.parse(`${event?.date} ${event?.time}`);
   const isEventPassed = eventDateTimeMS < Date.now();
 
-  // Permet d'afficher un message suivant le nombre de places restantes de participants
-  const spotsMessage = () => {
-    let message = '';
-    // Seuil critique à partir duquel on affiche un message (palier à déterminer)
-    
-    return message;
-  };
-
   // Permet de vérifier si le user est un participant de l'event pour changer le type de bouton de la modal
   const isParticipant = () => {
     const isUserParticipant = event?.participants.some(
@@ -89,7 +78,7 @@ const EventModal = ({
   const popover = (
     <Popover>
       <Popover.Body>
-        Cette fonctionnalité n'est pas encore développée ! 
+        Cette fonctionnalité n'est pas encore développée !
       </Popover.Body>
     </Popover>
   );
@@ -248,9 +237,7 @@ const EventModal = ({
     }
   };
 
-  
-
-  return  (
+  return (
     <>
       {event && (
         <Modal
@@ -293,12 +280,11 @@ const EventModal = ({
           {!isEditing ? (
             <>
               <div className='organisateur-block'>
-    
                 <div className='organisateur-infos'>
+                  <p>Organisateur : </p>
                   <p className='organisateur-name'>
                     {event?.organisateur.name}
                   </p>
-                  
                 </div>
               </div>
               <Modal.Body>
@@ -309,16 +295,12 @@ const EventModal = ({
                       <p className=''>{event?.time}</p>
                     </div>
                   </div>
-                  
                 </div>
               </Modal.Body>
               <div className='event-description'>{event.description}</div>
-
             </>
           ) : (
-            <Modal.Body>
-             
-            </Modal.Body>
+            <Modal.Body></Modal.Body>
           )}
           <Modal.Footer
             className={
@@ -349,11 +331,7 @@ const EventModal = ({
                 Je me désinscris
               </Button>
             ) : (
-              <Button
-                onClick={handleSubscribe}
-                className='modal-btn'
-              >
-              </Button>
+              <Button onClick={handleSubscribe} className='modal-btn'></Button>
             )}
             {isParticipant() && (
               <OverlayTrigger trigger='click' placement='top' overlay={popover}>

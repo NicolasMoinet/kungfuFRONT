@@ -75,16 +75,19 @@ const ThumbnailEvent = ({ eventType, events }: ThumbnailEventProps) => {
             {({ isActive, isPrev, isNext }) =>
               (isActive || isNext || isPrev) && (
                 <Card className='event-thumbnail'>
-                   <div className='event-thumbnail-Logo'>
-                    
+                  <div className='event-thumbnail-Logo'></div>
+                  <div className='event-thumbnail-avatar'>
+                    <Image
+                      src='/assets/panda.jpg' // Affiche la photo de l'orga si elle existe
+                      alt='panda avatar'
+                      thumbnail
+                      roundedCircle
+                    />
                   </div>
                   <div className='event-thumbnail-body'>
                     <div className='event-thumbnail-top-content'>
                       <div className='event-thumbnail-block event-thumbnail-header'>
-                        <Card.Title className='event-thumbnail-infos event-thumbnail-title'>
-                         
-                        </Card.Title>
-                        
+                        <Card.Title className='event-thumbnail-infos event-thumbnail-title'></Card.Title>
                       </div>
                       <div className='event-thumbnail-block'>
                         <Card.Text className='event-thumbnail-infos'>
@@ -95,7 +98,6 @@ const ThumbnailEvent = ({ eventType, events }: ThumbnailEventProps) => {
                         </Card.Text>
                       </div>
                     </div>
-                    
 
                     <Button
                       className='event-thumbnail-btn'

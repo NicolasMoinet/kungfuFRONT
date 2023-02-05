@@ -1,8 +1,11 @@
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { faCalendarPlus } from '@fortawesome/free-regular-svg-icons';
-import { faHouse } from '@fortawesome/free-solid-svg-icons';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarPlus, faUser } from '@fortawesome/free-regular-svg-icons';
+import {
+  faBlog,
+  faLeaf,
+  faMagnifyingGlass,
+} from '@fortawesome/free-solid-svg-icons';
 import { faCircleQuestion } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
@@ -16,25 +19,24 @@ function NavBar() {
 
   //TODO : Ajouter le Hover sur les icones
   return (
-    <Navbar fixed='bottom' className='navbar-main'>
-      <Link to={'/'}>
-        <img src='/assets/Logo.png' alt='logo' className='logo' />
-      </Link>
+    <Navbar fixed='top' className='navbar-main'>
       <Nav className='nav-link-container'>
+        <Link to={'/'} className='boxicon'>
+          <div className='nav-link'>
+            <FontAwesomeIcon icon={faLeaf} color={'white'} className='iconNB' />
+          </div>
+        </Link>
+
         <Link to={'/user/interface'} className='boxicon'>
           <div className='nav-link nav-icon'>
-            <FontAwesomeIcon
-              icon={faHouse}
-              color={'black'}
-              className='iconNB'
-            />
+            <FontAwesomeIcon icon={faUser} color={'white'} className='iconNB' />
           </div>
         </Link>
         <Link to={'/Recherche'} className='boxicon'>
           <div className='nav-link'>
             <FontAwesomeIcon
               icon={faMagnifyingGlass}
-              color={'black'}
+              color={'white'}
               className='iconNB'
             />
           </div>
@@ -43,18 +45,14 @@ function NavBar() {
           <div className='nav-link'>
             <FontAwesomeIcon
               icon={faCalendarPlus}
-              color={'black'}
+              color={'white'}
               className='iconNB'
             />
           </div>
         </Link>
-        <Link to={'/Faq'} className='boxicon'>
+        <Link to={'/Organiser'} className='boxicon'>
           <div className='nav-link'>
-            <FontAwesomeIcon
-              icon={faCircleQuestion}
-              color={'black'}
-              className='iconNB'
-            />
+            <FontAwesomeIcon icon={faBlog} color={'white'} className='iconNB' />
           </div>
         </Link>
         <Link to={'/connexion'} className='boxicon'>
@@ -62,7 +60,7 @@ function NavBar() {
             <FontAwesomeIcon
               icon={faArrowRightFromBracket}
               onClick={handleLogout}
-              color={'black'}
+              color={'white'}
               className='iconNB'
             />
           </div>

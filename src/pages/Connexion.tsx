@@ -75,7 +75,7 @@ const Connexion = () => {
           // On lance cette fonction du AuthContext pour récupérer le user caché dans le payload de l'accessToken et mettre à jour notre currentUser avec
           checkLogin();
 
-          navigate('/user/interface');
+          navigate('/');
         }
       })
       .catch((error) => {

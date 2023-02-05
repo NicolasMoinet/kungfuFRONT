@@ -15,17 +15,16 @@ import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 import './Recherche.css';
 import { useAuth } from '../context/AuthContext';
 
-
 //Creation de variable tampon pour stocker les filtres actifs, les mettre à jour et déclencher ou non le filtrage global des events
 let listEvents: EventType[] = [];
 let filteredDate = '';
-
+let filterSearchBar = '';
 
 const Search = () => {
   const [events, setEvents] = useState<EventType[]>([...listEvents]);
   const [activeFilters, setActiveFilters] = useState<string[]>([]);
   const [dateFilters, setDateFilters] = useState<string>('');
-  
+  const [searchFilters,setSearchFilters] = useState<string>('');
 
   useEffect(() => {
     const getEvents = async () => {
@@ -47,6 +46,20 @@ const Search = () => {
 
   ////////////////////////////////////////////////////HANDLEFILTERS///////////////////////////////////////////////////////////////////////////////////
 
+  const handleInputSearch= (e: React.ChangeEvent<HTMLInputElement>)=> {
+filterSearchBar= e.currentTarget.value;
+setSearchFilters(e.currentTarget.value)
+let resultActivFilter =[...activeFilters];
+let isTitleIactiveFilter = resultActivFilter.includes('Title')
+
+if(!isTitleIactiveFilter)
+resultActivFilter= [...resultActivFilter,'Title']
+setActiveFilters(resultActivFilter);
+allFilter();
+
+
+}
+
   const handleDatefiltered = (e: React.ChangeEvent<HTMLInputElement>) => {
     filteredDate = e.currentTarget.value;
     setDateFilters(e.currentTarget.value);
@@ -64,7 +77,6 @@ const Search = () => {
     allFilter();
   };
 
-  
   const handleRemoveFilter = (filterToRemove: string) => {
     //creer une variable tampon qui récupere une copie d active filer avc le spread
     let activFilterCopy = [...activeFilters];
@@ -83,22 +95,30 @@ const Search = () => {
     //On incluera ces elements dans le switch pour le setter et la var
     //faire switch pour reinitialiser les filtres et maj du filtre
     switch (filterToRemove) {
-      
+
       case 'Date':
         filteredDate = '';
         setDateFilters('');
         break;
-  
+
+        case 'Title': 
+       filterSearchBar ='';
+       setSearchFilters ('');
+        break;
     }
     // on reappelle allFilter pour redeclencher un nouveau filtre en prenant en compte le filtre que l on vient de supprimer
     allFilter();
   };
 
-  
   /////////////////////////////////////////////////ALLFILTERS////////////////////////////////////////////////////////////////////////////
   const allFilter = () => {
     let resultFilteredEvents: EventType[] = [...listEvents];
-    
+    if (filterSearchBar){
+      resultFilteredEvents= resultFilteredEvents.filter((event)=>{
+        return event.title.includes(filterSearchBar);
+      });
+    }
+
     if (filteredDate) {
       resultFilteredEvents = resultFilteredEvents.filter((event) => {
         const unJourEnMilliSec = 1000 * 60 * 60 * 24;
@@ -122,15 +142,37 @@ const Search = () => {
 
     setEvents(resultFilteredEvents);
   };
+  // const image_url = '../../public/assets/montagnerech.jpg';
 
   return (
     <Container className='rechercheContenair'>
-      <div>
+      <div className='bandeauTitreR'>
         <h1>Rechercher un événement</h1>
       </div>
+      {/* <div
+        className='imageR flex-center'
+        style={{ backgroundImage: `url(${image_url})` }}
+      >
+       
+      </div> */}
+      <div className='separation'>
 
+      </div>
       <div className='groupInput'>
-                             
+        <Row className='mb-3'>
+          <Form.Group as={Col}>
+            <FloatingLabel label='Title' className='mb-3'>
+              <Form.Control
+                as='textarea'
+                placeholder='Recerche par mots'
+                className='mb-3'
+                aria-label='Default select example'
+                onChange={handleInputSearch}
+                value={searchFilters}
+              />
+            </FloatingLabel>
+          </Form.Group>
+          <Form.Group as={Col}>
             <FloatingLabel label='Date' className='mb-3'>
               {' '}
               <Form.Control
@@ -139,7 +181,8 @@ const Search = () => {
                 value={dateFilters}
               />
             </FloatingLabel>
-             
+          </Form.Group>
+        </Row>
       </div>
       <div className='mt-4'>
         <ul className='container-buttonSUPP'>

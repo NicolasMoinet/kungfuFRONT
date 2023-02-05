@@ -1,20 +1,19 @@
 .bandeauFC {
-  background: linear-gradient(10deg, #ffd966, #ff9b83, #ff817b, #ff5757);
-
-width: 100%;
-  font-size: smaller;
-
-  height: 150px;
+  background: #242269 !important;
+  height: 45vh;
+  width: 100%;
   display: flex;
-  padding-left: 15px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  /* padding-left: 15px; */
+  /* margin-bottom: 20px; */
 }
 
 .titleFC {
-  color: aliceblue;
-  font-size: 50px;
+  color: rgb(255, 255, 255);
+  font-size: 40px;
   text-align: center;
+  padding-left: 60px;
 }
 
 .containerFC {
@@ -26,7 +25,8 @@ width: 100%;
 }
 
 .button-returnFC {
-  background-color: var(--background-primary);
+  background-color: #fcd146;
+  color: black;
   border: none;
   margin-left: 1250px;
 }
@@ -34,12 +34,12 @@ width: 100%;
 .button-returnFC:hover,
 .button-returnFcanvas,
 .button-returnFC:active {
-  background-color: var(--background-yellow) !important;
+  background-color: #fcd146 !important;
 }
 
 .boxiconFC {
   width: 20%;
-  font-size: 2.5em;
+  font-size: 3em;
   margin-left: 1350px;
 }
 
@@ -61,11 +61,12 @@ width: 100%;
 
   .boxiconFC {
     width: 20%;
-    font-size: 2em;
+    font-size: 3em;
     margin-left: 250px;
   }
   .button-returnFC {
-    background-color: var(--background-primary);
+    background-color: #fcd146 !important;
+    color: black;
     border: none;
     margin-left: 180px;
   }
@@ -73,6 +74,6 @@ width: 100%;
   .button-returnFC:hover,
   .button-returnFcanvas,
   .button-returnFC:active {
-    background-color: var(--background-yellow) !important;
+    background-color: #fcd146 !important;
   }
 }

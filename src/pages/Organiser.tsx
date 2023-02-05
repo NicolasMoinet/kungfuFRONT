@@ -19,24 +19,22 @@ import { errorInfo } from '../models/form-validate/errorMessage';
 import { useEvents } from '../context/EventsContext';
 
 const Organiser = () => {
-  
   const navigate = useNavigate();
   const [errorMsg, setErrorMsg] = useState<string>('');
   const [errorApiMessage, setErrorApiMessage] = useState<string[]>([]);
 
   const axiosPrivate = useAxiosPrivate();
 
-  
-
   const { handleToast } = useToast();
   const { events, setEvents } = useEvents();
-
-
 
   const title = useRef<HTMLInputElement>(null);
   const date = useRef<HTMLInputElement>(null);
   const time = useRef<HTMLInputElement>(null);
   const descrip = useRef<HTMLTextAreaElement>(null);
+  const address = useRef<HTMLInputElement>(null);
+  const postalCode = useRef<HTMLInputElement>(null);
+  const city = useRef<HTMLInputElement>(null);
 
   const handleSubmitForm = (e: FormEvent) => {
     //quand on click sur le button pour envoyer les données
@@ -46,12 +44,18 @@ const Organiser = () => {
     const titleInput = title.current?.value;
     const dateInput = date.current?.value;
     const timeInput = time.current?.value;
+    const addressInput = address.current?.value;
+    const postalCodeInput = postalCode.current?.value;
+    const cityInput = city.current?.value;
     let descripInput = descrip.current?.value;
 
     if (
       titleInput &&
       dateInput &&
       timeInput &&
+      addressInput &&
+      postalCode &&
+      cityInput &&
       descripInput
     ) {
       if (titleInput && !isValid('title', titleInput)) {
@@ -90,11 +94,13 @@ const Organiser = () => {
         console.log('description avec 1 seul espace max : ', descripInput);
       }
 
-
       let userInsert = {
         title: titleInput,
         date: dateInput,
         time: timeInput,
+        address: addressInput,
+        postalCode: postalCodeInput,
+        city: cityInput,
         description: descripInput,
       };
       console.log(userInsert);
@@ -157,7 +163,7 @@ const Organiser = () => {
                   placeholder='Titre évènement'
                 />
               </FloatingLabel>
-              
+
               <Row className='py-3'>
                 <Form.Group as={Col}>
                   <FloatingLabel label='Date' className='mb-3'>
@@ -169,6 +175,24 @@ const Organiser = () => {
                 <Form.Group as={Col}>
                   <FloatingLabel label='Heure' className='mb-3'>
                     <Form.Control type='time' ref={time} required />
+                  </FloatingLabel>
+                </Form.Group>
+              </Row>
+              <FloatingLabel label='address' className='mb-3'>
+                {' '}
+                <Form.Control required ref={address} placeholder='Adresse' />
+              </FloatingLabel>
+              <Row className='py-3'>
+                <Form.Group as={Col}>
+                  <FloatingLabel label='Code postal' className='mb-3'>
+                    {' '}
+                    <Form.Control type='text' ref={postalCode} required />
+                  </FloatingLabel>
+                </Form.Group>
+
+                <Form.Group as={Col}>
+                  <FloatingLabel label='Ville' className='mb-3'>
+                    <Form.Control type='text' ref={city} required />
                   </FloatingLabel>
                 </Form.Group>
               </Row>

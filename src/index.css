@@ -24,7 +24,7 @@ ul {
 }
 
 :root {
-  --background-primary: rgb(255, 87, 87);
-  --background-green: rgb(201, 226, 101);
-  --background-yellow: #ffd966;
+  --background-primary: #242269;
+  --background-green: #af88f4;
+  --background-yellow: #fcd146;
 }

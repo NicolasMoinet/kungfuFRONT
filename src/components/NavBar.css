@@ -2,23 +2,18 @@
   padding: 0;
   position: fixed;
   align-items: center;
+  top: 0px;
 }
 
 .nav-link-container {
   width: 100%;
   text-align: center;
-  background: linear-gradient(200deg, #ff5757, #ffd966);
-}
-
-.logo {
-  width: 8em;
-  padding: 8px;
-  display: none;
+  background: #242269;
 }
 
 .boxicon {
-  width: 20%;
-  font-size: 2.2em;
+  width: 11%;
+  font-size: 1.6em;
 }
 
 .iconNB:hover {
@@ -28,12 +23,15 @@
 @media (min-width: 768px) {
   .navbar-main {
     justify-content: space-between;
-    position: initial;
+    position: fixed;
     align-items: center;
   }
   .nav-link-container {
-    background: white;
-    width: auto;
+    width: 100%;
+    text-align: center;
+    background: #242269;
+    display: flex;
+    justify-content: flex-end;
   }
   .boxicon {
     padding: 0 30px;
