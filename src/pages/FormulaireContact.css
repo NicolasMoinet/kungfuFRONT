@@ -45,8 +45,8 @@
 
 @media (max-width: 600px) {
   .bandeauFC {
-    background-image: url(../../public/assets/BandeauACC.svg);
-    background: linear-gradient(10deg, #ffd966, #ff9b83, #ff817b, #ff5757);
+    
+    background: #242269;
     height: 150px;
     width: 100%;
     display: flex;

@@ -6,7 +6,7 @@ import {
   faLeaf,
   faMagnifyingGlass,
 } from '@fortawesome/free-solid-svg-icons';
-import { faCircleQuestion } from '@fortawesome/free-solid-svg-icons';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';

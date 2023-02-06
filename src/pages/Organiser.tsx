@@ -121,7 +121,7 @@ const Organiser = () => {
             setEvents(updatedEventsList);
             setErrorMsg('');
             handleToast({
-              message: 'Votre évènement a bien été créé, bravo !',
+              message: 'Votre évènement a bien été créé !',
               color: 'success',
               delay: 5000,
             });
@@ -148,12 +148,12 @@ const Organiser = () => {
 
   return (
     <>
+      <div className='bandeauTitreO'>
+        <h2>Créer votre évènement </h2>
+      </div>
       <Container className='container'>
         <Row>
           <Col>
-            <div>
-              <h2>Créer votre évènement </h2>
-            </div>
             <form onSubmit={handleSubmitForm}>
               <FloatingLabel label='Titre évènement' className='mb-3'>
                 {' '}
@@ -167,7 +167,6 @@ const Organiser = () => {
               <Row className='py-3'>
                 <Form.Group as={Col}>
                   <FloatingLabel label='Date' className='mb-3'>
-                    {' '}
                     <Form.Control type='date' ref={date} required />
                   </FloatingLabel>
                 </Form.Group>
@@ -178,9 +177,9 @@ const Organiser = () => {
                   </FloatingLabel>
                 </Form.Group>
               </Row>
-              <FloatingLabel label='address' className='mb-3'>
+              <FloatingLabel label='Adresse' className='mb-3'>
                 {' '}
-                <Form.Control required ref={address} placeholder='Adresse' />
+                <Form.Control required ref={address} placeholder='Address' />
               </FloatingLabel>
               <Row className='py-3'>
                 <Form.Group as={Col}>

@@ -6,11 +6,11 @@
 }
 
 .button-signin {
-  background-color: var(--background-primary);
+  background-color: #242269 !important;
   border: none;
 }
 
 .button-signin:hover,
 .button-signin:focus .button-signin:active {
-  background-color: var(--background-yellow) !important;
+  background-color: #fcd146 !important;
 }

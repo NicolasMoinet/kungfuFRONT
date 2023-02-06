@@ -1,18 +1,18 @@
 .landing-page {
-  height: 100vh;
+  height: 100%;
 }
 .titre {
   position: relative;
   z-index: 500;
   margin-top: 60px;
 }
-h1 {
+.xy {
   color: white;
-  font-size: 90px;
+  font-size: 40px;
   padding: 100px 0 0 10vw;
   position: relative;
 }
-p {
+.opponent {
   color: white;
   font-size: 20px;
   padding-left: 10vw;
@@ -43,7 +43,7 @@ p {
   align-items: center;
 }
 
-.textcommentaireLP {
+/* .textcommentaireLP {
   text-align: center;
   padding: 17px;
 }
@@ -51,7 +51,7 @@ p {
 .textcommentaireLP2 {
   padding: 20px;
   text-align: center;
-}
+} */
 
 .comment-footer {
   display: flex;
@@ -78,10 +78,35 @@ p {
 }
 
 @media (min-width: 768px) {
+  .prez {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 40vh;
+    margin-bottom: 5px;
+  }
+  .prezTitre {
+    flex-grow: 1;
+    align-items: center;
+  }
+  .minititre {
+    flex-grow: 1;
+    padding: 40px;
+    width: 500px;
+  }
   .titre {
     position: relative;
     z-index: 1000;
     margin-top: 60px;
+  }
+  .montagne {
+    flex-grow: 3;
+    /* object-fit: cover; */
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.4s ease-in-out;
+    transform:scale(1);
+    will-change: transform;
   }
   h1 {
     color: white;
@@ -89,10 +114,10 @@ p {
     padding: 100px 0 0 10vw;
     position: relative;
   }
-  p {
-    color: white;
+  .blabla {
+    color: rgb(4, 4, 4);
     font-size: 15px;
-    padding-left: 10vw;
+    /* padding-left: 10vw; */
     margin: 7px 0;
   }
   .section-slogan {

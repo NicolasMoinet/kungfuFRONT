@@ -5,7 +5,7 @@
 .swiper-button-next,
 .swiper-button-prev {
   display: none;
-  color: var(--background-primary) !important;
+  color: #af88f4 !important;
 }
 
 .swiper-pagination {
@@ -13,9 +13,11 @@
 }
 
 .swiper-pagination-bullet-active {
-  background-color: var(--background-primary);
+  background-color: #af88f4 !important;
 }
-
+.imgThumbmail {
+  border-radius: 30px;
+}
 .event-thumbnail {
   position: relative;
   flex-direction: row;
@@ -77,12 +79,12 @@
 .event-thumbnail-btn:active {
   align-self: flex-end;
   font-size: 1.2em;
-  background-color: var(--background-primary) !important;
+  background-color: #af88f4 !important;
   border: none;
 }
 
 .event-thumbnail-btn:hover {
-  background-color: var(--background-yellow);
+  background-color: #242269;
 }
 
 @media screen and (min-width: 768px) {
@@ -101,5 +103,6 @@
 
   .event-thumbnail-avatar {
     bottom: 9px;
+    border-radius: 30px;
   }
 }

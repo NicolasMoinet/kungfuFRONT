@@ -331,7 +331,7 @@ const EventModal = ({
                 Je me désinscris
               </Button>
             ) : (
-              <Button onClick={handleSubscribe} className='modal-btn'></Button>
+              <Button onClick={handleSubscribe} className='modal-btn'>Je m'inscris</Button>
             )}
             {isParticipant() && (
               <OverlayTrigger trigger='click' placement='top' overlay={popover}>

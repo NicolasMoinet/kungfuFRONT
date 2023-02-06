@@ -1,7 +1,10 @@
 .footer-basic {
-  padding: 40px 0;
+  padding: 3px 0;
   background: #af88f4;
   color: #0a0a0a;
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
 }
 
 .footer-basic ul {
@@ -51,13 +54,12 @@
 }
 
 .footer-basic .copyright {
-  margin-top: 15px;
+  /* margin-top: ; */
   text-align: center;
   font-size: 13px;
   color: rgb(0, 0, 0);
   margin-bottom: 0;
-  
 }
-.copyright{
-  margin-left:0;
+.copyright {
+  margin-left: 0;
 }

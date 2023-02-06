@@ -1,16 +1,12 @@
 import Header from '../components/Header';
-import { Navigation, Pagination } from 'swiper';
 import { useEffect, useState } from 'react';
 import './LandingPage.css';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faComments } from '@fortawesome/free-regular-svg-icons';
-import { faStar } from '@fortawesome/free-regular-svg-icons';
 import { NavLayout } from '../App';
 import Footer from '../components/Footer';
 import { useEvents } from '../context/EventsContext';
 import { useAuth } from '../context/AuthContext';
-
+import { Image } from 'react-bootstrap';
 const LandingPage = () => {
   const { events } = useEvents();
   const { currentUser } = useAuth();
@@ -23,26 +19,31 @@ const LandingPage = () => {
         <section className='section-slogan'>
           {/* <img className='Fond-head' src='vector4.svg' alt='Montagne'/> */}
           <div className='Titre'>
-            <h1>Xiong Ying Wushuguan</h1>
-            <p> ONLY ONE OPPONENT : YOURSELF </p>
+            <h1 className='xy'>Xiong Ying Wushuguan</h1>
+            <p className='opponent'> ONLY ONE OPPONENT : YOURSELF </p>
           </div>
         </section>
-        {/* <section> */}
-        {/* <div>
-            <div>
-              <h4>Bienvenue sur le site de l'association</h4>
+        <div className='prez'>
+          <div className='minititre'>
+            <div className='prezTitre'>
+              <h6 className='mb-0'>Bienvenue sur le site de l'association</h6>
             </div>
             <div>
-              <h3>L'ecole de l'aigle bienveillant</h3>
-              <p> 
-                Créer récemment, notre école est issue d'une volonté commune de
-                se retrouver autour
-                blablabalbalbablabalbalalblballbalbalbalbalblabl{' '}
+              <h3 className='mb-15'>L'école de l'aigle bienveillant</h3>
+              <p className='blabla'>
+                Notre association est issue d'une volonté de nous retrouver
+                autour de notre passion commune le Kung-fu wu shu. Fort de 30
+                ans d'experience, Jacky Juste (6eme Duan) vous acompagnera dans
+                votre apprentissage, technique, mais aussi combat.
               </p>
-            </div> */}
-        {/* </div> */}
-
-        {/* </section> */}
+            </div>
+          </div>
+          <img
+            className='montagne img-thumbmail'
+            src='assets/montagnerech.jpg'
+            alt='montagne'
+          />
+        </div>
       </div>
       <Footer />
     </>

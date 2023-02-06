@@ -40,12 +40,11 @@ const ThumbnailEvent = ({ eventType, events }: ThumbnailEventProps) => {
       setShow(true);
       // l'activité et level fetch étant des objets, on doit traiter séparemment leurs ajouts dans le state pour matcher avec leurs props dans le composant EventUpdate
       setEvent({
-        ...event
-        
+        ...event,
       });
     }
   };
-  
+
   return (
     <>
       <Swiper
@@ -75,13 +74,12 @@ const ThumbnailEvent = ({ eventType, events }: ThumbnailEventProps) => {
             {({ isActive, isPrev, isNext }) =>
               (isActive || isNext || isPrev) && (
                 <Card className='event-thumbnail'>
-                  <div className='event-thumbnail-Logo'></div>
                   <div className='event-thumbnail-avatar'>
                     <Image
-                      src='/assets/panda.jpg' // Affiche la photo de l'orga si elle existe
+                      src='/assets/fight.jpg' // Affiche la photo de l'orga si elle existe
                       alt='panda avatar'
                       thumbnail
-                      roundedCircle
+                      // roundedCircle
                     />
                   </div>
                   <div className='event-thumbnail-body'>
@@ -91,17 +89,17 @@ const ThumbnailEvent = ({ eventType, events }: ThumbnailEventProps) => {
                       </div>
                       <div className='event-thumbnail-block'>
                         <Card.Text className='event-thumbnail-infos'>
-                          {formatDate(event.date)}
+                          Date : {formatDate(event.date)}
                         </Card.Text>
                         <Card.Text className='event-thumbnail-infos event-thumbnail-time'>
-                          {event.time}
+                          Heure : {event.time}
                         </Card.Text>
                       </div>
                     </div>
 
                     <Button
                       className='event-thumbnail-btn'
-                      onClick={() => handleClick(event)}
+                      onClick={() => {alert("test");handleClick(event)}}
                     >
                       + de détails
                     </Button>

@@ -24,7 +24,7 @@ const Search = () => {
   const [events, setEvents] = useState<EventType[]>([...listEvents]);
   const [activeFilters, setActiveFilters] = useState<string[]>([]);
   const [dateFilters, setDateFilters] = useState<string>('');
-  const [searchFilters,setSearchFilters] = useState<string>('');
+  const [searchFilters, setSearchFilters] = useState<string>('');
 
   useEffect(() => {
     const getEvents = async () => {
@@ -46,19 +46,17 @@ const Search = () => {
 
   ////////////////////////////////////////////////////HANDLEFILTERS///////////////////////////////////////////////////////////////////////////////////
 
-  const handleInputSearch= (e: React.ChangeEvent<HTMLInputElement>)=> {
-filterSearchBar= e.currentTarget.value;
-setSearchFilters(e.currentTarget.value)
-let resultActivFilter =[...activeFilters];
-let isTitleIactiveFilter = resultActivFilter.includes('Title')
+  const handleInputSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    filterSearchBar = e.currentTarget.value;
+    setSearchFilters(filterSearchBar);
+    let resultActivFilter = [...activeFilters];
+    let isTitleIactiveFilter = resultActivFilter.includes('Title');
 
-if(!isTitleIactiveFilter)
-resultActivFilter= [...resultActivFilter,'Title']
-setActiveFilters(resultActivFilter);
-allFilter();
-
-
-}
+    if (!isTitleIactiveFilter)
+      resultActivFilter = [...resultActivFilter, 'Title'];
+    setActiveFilters(resultActivFilter);
+    allFilter();
+  };
 
   const handleDatefiltered = (e: React.ChangeEvent<HTMLInputElement>) => {
     filteredDate = e.currentTarget.value;
@@ -95,15 +93,14 @@ allFilter();
     //On incluera ces elements dans le switch pour le setter et la var
     //faire switch pour reinitialiser les filtres et maj du filtre
     switch (filterToRemove) {
-
       case 'Date':
         filteredDate = '';
         setDateFilters('');
         break;
 
-        case 'Title': 
-       filterSearchBar ='';
-       setSearchFilters ('');
+      case 'Title':
+        filterSearchBar = '';
+        setSearchFilters('');
         break;
     }
     // on reappelle allFilter pour redeclencher un nouveau filtre en prenant en compte le filtre que l on vient de supprimer
@@ -113,8 +110,8 @@ allFilter();
   /////////////////////////////////////////////////ALLFILTERS////////////////////////////////////////////////////////////////////////////
   const allFilter = () => {
     let resultFilteredEvents: EventType[] = [...listEvents];
-    if (filterSearchBar){
-      resultFilteredEvents= resultFilteredEvents.filter((event)=>{
+    if (filterSearchBar) {
+      resultFilteredEvents = resultFilteredEvents.filter((event) => {
         return event.title.includes(filterSearchBar);
       });
     }
@@ -155,16 +152,14 @@ allFilter();
       >
        
       </div> */}
-      <div className='separation'>
-
-      </div>
+      <div className='separation'></div>
       <div className='groupInput'>
         <Row className='mb-3'>
           <Form.Group as={Col}>
-            <FloatingLabel label='Title' className='mb-3'>
+            <FloatingLabel label='Titre' className='mb-3'>
               <Form.Control
-                as='textarea'
-                placeholder='Recerche par mots'
+                type='text'
+                placeholder='Title'
                 className='mb-3'
                 aria-label='Default select example'
                 onChange={handleInputSearch}

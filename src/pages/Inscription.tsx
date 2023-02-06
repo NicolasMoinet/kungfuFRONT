@@ -27,7 +27,6 @@ const Inscription = () => {
   const confirmPassword = useRef<HTMLInputElement>(null);
   const name = useRef<HTMLInputElement>(null);
 
-
   const handleSubmitForm = (e: FormEvent) => {
     e.preventDefault();
 
@@ -59,7 +58,6 @@ const Inscription = () => {
       }, 5000);
       return;
     }
-    
 
     let userIn = {
       email: `${email.current?.value}`,
@@ -135,21 +133,17 @@ const Inscription = () => {
                   required
                 />
               </FloatingLabel>
-              <Row className='mb-3'>
-                <Form.Group as={Col}>
-                  <FloatingLabel label='Pseudo' className='mb-3'>
-                    {' '}
-                    <Form.Control
-                      ref={name}
-                      type='text'
-                      placeholder='Pseudo'
-                      required
-                    />
-                  </FloatingLabel>
-                </Form.Group>
-                </Row>
 
-                
+              <FloatingLabel label='Pseudo' className='mb-3'>
+                {' '}
+                <Form.Control
+                  ref={name}
+                  type='text'
+                  placeholder='Pseudo'
+                  required
+                />
+              </FloatingLabel>
+
               <Button className='button-signup mb-3' type='submit'>
                 Envoyer
               </Button>
