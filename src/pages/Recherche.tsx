@@ -146,16 +146,11 @@ const Search = () => {
       <div className='bandeauTitreR'>
         <h1>Rechercher un événement</h1>
       </div>
-      {/* <div
-        className='imageR flex-center'
-        style={{ backgroundImage: `url(${image_url})` }}
-      >
-       
-      </div> */}
+      <img className='imageR' src='assets/fleuve.jpg' alt='shaolin'></img>
       <div className='separation'></div>
       <div className='groupInput'>
-        <Row className='mb-3'>
-          <Form.Group as={Col}>
+        <Row className='rowR mb-3'>
+          {/* <Form.Group as={Col}>
             <FloatingLabel label='Titre' className='mb-3'>
               <Form.Control
                 type='text'
@@ -166,7 +161,7 @@ const Search = () => {
                 value={searchFilters}
               />
             </FloatingLabel>
-          </Form.Group>
+          </Form.Group> */}
           <Form.Group as={Col}>
             <FloatingLabel label='Date' className='mb-3'>
               {' '}
@@ -197,7 +192,7 @@ const Search = () => {
         </ul>
       </div>
 
-      <h2 className='mb-4'>Resultats</h2>
+      <h2 className='resultats mb-4'>Resultats</h2>
       <ThumbnailEvent events={events} />
     </Container>
   );

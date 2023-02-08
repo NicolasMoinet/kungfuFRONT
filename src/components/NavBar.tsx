@@ -19,7 +19,7 @@ function NavBar() {
 
   //TODO : Ajouter le Hover sur les icones
   return (
-    <Navbar fixed='top' className='navbar-main'>
+    <Navbar className='navbar-main'>
       <Nav className='nav-link-container'>
         <Link to={'/'} className='boxicon'>
           <div className='nav-link'>

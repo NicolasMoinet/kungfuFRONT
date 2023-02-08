@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
-import { faLeaf, faMagnifyingGlass, faMarker } from '@fortawesome/free-solid-svg-icons';
+import {
+  
+  faMarker,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import NavBarLoginIn from '../components/NavBarLoginIn';
 import ThumbnailEvent from '../components/ThumbnailEvent';
@@ -28,7 +31,6 @@ const UserInterface = () => {
   const [listEvents, setListEvents] = useState<EventType[]>([]);
 
   useEffect(() => {
-    
     axiosPrivate
       .get(
         `http://localhost:8080/api/users/events/participant/${currentUser?.id}`
@@ -39,10 +41,6 @@ const UserInterface = () => {
         console.log('UI event participant', eventsListUserParticipant);
       });
   }, [events]);
-
-  
-  
-  
 
   const filterNextEventsParticipant = () => {
     let resultUserNextEvent: EventType[] = [...listEvents];
@@ -81,7 +79,6 @@ const UserInterface = () => {
 
         return (
           currentUser &&
-         
           Date.now() < eventDateHourMS &&
           //doit etre organisatzu
           isOrganisateur
@@ -112,7 +109,7 @@ const UserInterface = () => {
             <FontAwesomeIcon
               icon={faMarker}
               color={'white'}
-              className='iconNB'
+              className='iconNB '
             />
           </div>
         </Link>

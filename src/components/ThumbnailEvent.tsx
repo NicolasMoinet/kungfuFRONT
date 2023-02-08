@@ -85,7 +85,9 @@ const ThumbnailEvent = ({ eventType, events }: ThumbnailEventProps) => {
                   <div className='event-thumbnail-body'>
                     <div className='event-thumbnail-top-content'>
                       <div className='event-thumbnail-block event-thumbnail-header'>
-                        <Card.Title className='event-thumbnail-infos event-thumbnail-title'></Card.Title>
+                        <Card.Title className='event-thumbnail-infos event-thumbnail-title'>
+                          {event?.title}
+                        </Card.Title>
                       </div>
                       <div className='event-thumbnail-block'>
                         <Card.Text className='event-thumbnail-infos'>
@@ -99,7 +101,10 @@ const ThumbnailEvent = ({ eventType, events }: ThumbnailEventProps) => {
 
                     <Button
                       className='event-thumbnail-btn'
-                      onClick={() => {alert("test");handleClick(event)}}
+                      onClick={() => {
+                        alert('test');
+                        handleClick(event);
+                      }}
                     >
                       + de détails
                     </Button>

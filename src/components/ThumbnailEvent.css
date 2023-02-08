@@ -22,25 +22,14 @@
   position: relative;
   flex-direction: row;
   justify-content: space-between;
-  height: 200px;
-  padding: 10px;
+  height: 400px;
+  /* padding: 10px; */
   padding-bottom: 25px;
-  width: 330px;
-  margin: 0 auto;
+  width: 800px;
+  margin: auto;
   max-width: 330px;
   font-size: 0.9em;
-}
-
-.event-thumbnail-map {
-  /* flex: 1; */
-  width: 45%;
-}
-
-.event-thumbnail-Logo {
-  position: absolute;
-  width: 5.8rem;
-  left: 33%;
-  bottom: 24px;
+  margin-bottom: 40px;
 }
 
 .event-thumbnail-body {
@@ -48,7 +37,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding-left: 10px;
-  width: 55%;
+  width: 100%;
 }
 
 .event-thumbnail-infos {

@@ -10,5 +10,8 @@ export interface EventType {
   date: string;
   time: string;
   description: string;
+  address: string;
+  postalCode:string;
+  city:string;
   participants: UserType[];
 }

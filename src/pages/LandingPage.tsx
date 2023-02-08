@@ -6,7 +6,9 @@ import { NavLayout } from '../App';
 import Footer from '../components/Footer';
 import { useEvents } from '../context/EventsContext';
 import { useAuth } from '../context/AuthContext';
-import { Image } from 'react-bootstrap';
+import { Button, Image } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelopesBulk } from '@fortawesome/free-solid-svg-icons';
 const LandingPage = () => {
   const { events } = useEvents();
   const { currentUser } = useAuth();
@@ -19,7 +21,7 @@ const LandingPage = () => {
         <section className='section-slogan'>
           {/* <img className='Fond-head' src='vector4.svg' alt='Montagne'/> */}
           <div className='Titre'>
-            <h1 className='xy'>Xiong Ying Wushuguan</h1>
+            <h1 className='xy'>Xiong Ying WushuGuan</h1>
             <p className='opponent'> ONLY ONE OPPONENT : YOURSELF </p>
           </div>
         </section>
@@ -32,18 +34,37 @@ const LandingPage = () => {
               <h3 className='mb-15'>L'école de l'aigle bienveillant</h3>
               <p className='blabla'>
                 Notre association est issue d'une volonté de nous retrouver
-                autour de notre passion commune le Kung-fu wu shu. Fort de 30
-                ans d'experience, Jacky Juste (6eme Duan) vous acompagnera dans
-                votre apprentissage, technique, mais aussi combat.
+                autour de notre passion commune le Kung-fu Wushu. Fort de 30 ans
+                d'experience, Jacky Juste (6eme Duan) vous accompagnera dans
+                votre apprentissage.
               </p>
             </div>
           </div>
-          <img
-            className='montagne img-thumbmail'
-            src='assets/montagnerech.jpg'
-            alt='montagne'
-          />
+
+          <div className='contactLP'>
+            <h2 className='contactTitre '>Contactez nous</h2>
+            <p className='contactSousTitre mb-15 '>
+              Cliquez sur le lien ci dessous
+            </p>
+            <Link to={'/formulairecontact'} className='boxiconLP'>
+              <div className='nav-link'>
+                <FontAwesomeIcon
+                  icon={faEnvelopesBulk}
+                  color={'white'}
+                  className='iconNB fa-2xl'
+                />
+              </div>
+            </Link>
+          </div>
+          <div className='cubeLP'></div>
         </div>
+      </div>
+      <div>
+        <img
+          className='montagne img-thumbmail'
+          src='assets/montagnerech.jpg'
+          alt='montagne'
+        />
       </div>
       <Footer />
     </>

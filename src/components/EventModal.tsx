@@ -73,8 +73,6 @@ const EventModal = ({
     console.log('Modal - User est-il un participant : ', isUserParticipant);
     return isUserParticipant;
   };
-
-  // Définition du composant popover qui va s'afficher quand on essaie de contacter un organisateur
   const popover = (
     <Popover>
       <Popover.Body>
@@ -290,9 +288,17 @@ const EventModal = ({
               <Modal.Body>
                 <div className='event-content'>
                   <div className='event-details'>
-                    <div className='event-where-when'>
-                      <p className=''>{formatDate(event.date)}</p>
-                      <p className=''>{event?.time}</p>
+                    <div className='event-where'>
+                      <p className='white'> Adresse : {event?.address}</p>
+                      <p className='black'> Ville : {event?.city}</p>
+                      <p className='black'>
+                        {' '}
+                        Code postal : {event?.postalCode}
+                      </p>
+                    </div>
+                    <div className='event-when'>
+                      <p className='black'>Date : {formatDate(event.date)}</p>
+                      <p className='black'>Heure : {event?.time}</p>
                     </div>
                   </div>
                 </div>
@@ -331,7 +337,9 @@ const EventModal = ({
                 Je me désinscris
               </Button>
             ) : (
-              <Button onClick={handleSubscribe} className='modal-btn'>Je m'inscris</Button>
+              <Button onClick={handleSubscribe} className='modal-btn'>
+                Je m'inscris
+              </Button>
             )}
             {isParticipant() && (
               <OverlayTrigger trigger='click' placement='top' overlay={popover}>

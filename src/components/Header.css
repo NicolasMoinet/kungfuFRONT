@@ -1,10 +1,9 @@
 .headerLP {
   background-color: white;
-  height: 90px;
+  height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
 }
 
 img {
