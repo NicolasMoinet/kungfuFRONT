@@ -1,0 +1,47 @@
+.button-signup {
+  background-color: #242269;
+  
+  border: none;
+  align-items: center;
+}
+.containerBO {
+  margin-top: 5vh;
+}
+.button-signup:hover,
+.button-signup:focus,
+.button-signup:active {
+  background-color: var(--background-yellow) !important;
+}
+
+.bandeauTitreO {
+  width: 100%;
+  height: 35vh;
+  background-color: #242269;
+  color: white;
+}
+h2 {
+  color: white;
+  font-size: 90px;
+  padding: 100px 0 0 10vw;
+  position: relative;
+}
+@media (min-width: 720px) {
+  /* .imageR {
+  background-image: url(../../public/assets/Vector4.svg);
+  width: 100%;
+  height: 25vh;
+} */
+  h1 {
+    color: white;
+    font-size: 90px;
+    padding: 100px 0 0 10vw;
+    position: relative;
+  }
+
+  .bandeauTitreBO {
+    width: 100%;
+    height: 35vh;
+    background-color: #242269;
+    color: white;
+  }
+}

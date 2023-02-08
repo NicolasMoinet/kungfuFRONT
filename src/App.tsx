@@ -23,6 +23,8 @@ import EventsProvider from './context/EventsContext';
 import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
 import FormulaireContact from './pages/FormulaireContact';
+import BlogProvider from './context/BlogContext';
+import BlogOrganiser from './pages/BlogOrganiser';
 
 export const NavLayout = () => {
   const { currentUser } = useAuth();
@@ -42,35 +44,50 @@ export const NavLayout = () => {
   );
 };
 const App = () => {
-  
   return (
     <>
       <BrowserRouter>
         <ToastProvider>
           <CurrentUserProvider>
             <EventsProvider>
-              <Routes>
-                <Route index element={<LandingPage />} />
-                <Route path='/inscription' element={<Inscription />} />
-                <Route path='/connexion' element={<Connexion />} />
-                <Route path='/password/recover' element={<ForgotPassword />} />
-                <Route path='/password/reset' element={<ResetPassword />} />
-                <Route path='/formulairecontact' element={<FormulaireContact />}
-                />{' '}
-                <Route element={<NavLayout />}>
-                  {/* Admin Protected Routes */}
-                  <Route element={<RequireAuth allowedRole={['admin']} />}>
-                    <Route path='/admin' element={<Admin />} />
+              <BlogProvider>
+                <Routes>
+                  <Route index element={<LandingPage />} />
+                  <Route path='/inscription' element={<Inscription />} />
+                  <Route path='/connexion' element={<Connexion />} />
+                  <Route
+                    path='/password/recover'
+                    element={<ForgotPassword />}
+                  />
+                  <Route path='/password/reset' element={<ResetPassword />} />
+                  <Route
+                    path='/formulairecontact'
+                    element={<FormulaireContact />}
+                  />{' '}
+                  <Route element={<NavLayout />}>
+                    {/* Admin Protected Routes */}
+                    <Route element={<RequireAuth allowedRole={['admin']} />}>
+                      <Route path='/admin' element={<Admin />} />
+                    </Route>
+                    {/* User Protected Routes */}
+                    <Route
+                      element={<RequireAuth allowedRole={['admin', 'user']} />}
+                    >
+                      <Route
+                        path='/user/interface'
+                        element={<UserInterface />}
+                      />
+                      <Route path='/user/profile' element={<UserProfile />} />
+                      <Route path='/recherche' element={<Recherche />} />
+                      <Route path='/organiser' element={<Organiser />} />
+                      <Route
+                        path='/organiserBlog'
+                        element={<BlogOrganiser />}
+                      />
+                    </Route>
                   </Route>
-                  {/* User Protected Routes */}
-                  <Route element={<RequireAuth allowedRole={['admin', 'user']} />}>
-                    <Route path='/user/interface' element={<UserInterface />} />
-                    <Route path='/user/profile' element={<UserProfile />} />
-                    <Route path='/recherche' element={<Recherche />} />
-                    <Route path='/organiser' element={<Organiser />} />
-                  </Route>
-                </Route>
-              </Routes>
+                </Routes>
+              </BlogProvider>
             </EventsProvider>
           </CurrentUserProvider>
         </ToastProvider>

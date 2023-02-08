@@ -3,6 +3,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import { faCalendarPlus, faUser } from '@fortawesome/free-regular-svg-icons';
 import {
   faBlog,
+  faClipboardList,
+  faClipboardUser,
   faLeaf,
   faMagnifyingGlass,
 } from '@fortawesome/free-solid-svg-icons';
@@ -53,6 +55,15 @@ function NavBar() {
         <Link to={'/Organiser'} className='boxicon'>
           <div className='nav-link'>
             <FontAwesomeIcon icon={faBlog} color={'white'} className='iconNB' />
+          </div>
+        </Link>
+        <Link to={'/Organiserblog'} className='boxicon'>
+          <div className='nav-link'>
+            <FontAwesomeIcon
+              icon={faClipboardList}
+              color={'white'}
+              className='iconNB'
+            />
           </div>
         </Link>
         <Link to={'/connexion'} className='boxicon'>

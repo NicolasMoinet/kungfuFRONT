@@ -20,9 +20,9 @@
   padding: 2rem;
 }
 
-.row {
+/* .row {
   padding: 15px;
-}
+} */
 
 .button-returnFC {
   background-color: #fcd146;
@@ -45,7 +45,6 @@
 
 @media (max-width: 600px) {
   .bandeauFC {
-    
     background: #242269;
     height: 150px;
     width: 100%;
