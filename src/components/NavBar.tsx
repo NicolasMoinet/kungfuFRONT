@@ -52,7 +52,7 @@ function NavBar() {
             />
           </div>
         </Link>
-        <Link to={'/Organiser'} className='boxicon'>
+        <Link to={'/rechercheBlog'} className='boxicon'>
           <div className='nav-link'>
             <FontAwesomeIcon icon={faBlog} color={'white'} className='iconNB' />
           </div>

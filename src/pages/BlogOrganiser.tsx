@@ -16,9 +16,6 @@ import useAxiosPrivate from '../api/useAxiosPrivate';
 import './BlogOrganiser.css';
 import { isValid } from '../models/form-validate/validation';
 import { errorInfo } from '../models/form-validate/errorMessage';
-
-import { BlogType } from '../models/interface/Blog';
-import { WriterType } from '../models/interface/Writer';
 import { useBlog } from '../context/BlogContext';
 
 const BlogOrganiser = () => {

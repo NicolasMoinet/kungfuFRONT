@@ -9,7 +9,7 @@
 .xy {
   color: white;
   font-size: 40px;
-  padding: 100px 0 0 10vw;
+  padding: 60px 0 0 10vw;
   position: relative;
 }
 .opponent {
@@ -170,7 +170,7 @@
   h1 {
     color: white;
     font-size: 90px;
-    padding: 100px 0 0 10vw;
+    padding: 60px 0 0 10vw;
     position: relative;
   }
   .blabla {

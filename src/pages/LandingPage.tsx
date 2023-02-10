@@ -4,15 +4,14 @@ import './LandingPage.css';
 import { Link } from 'react-router-dom';
 import { NavLayout } from '../App';
 import Footer from '../components/Footer';
-import { useEvents } from '../context/EventsContext';
 import { useAuth } from '../context/AuthContext';
 import { Button, Image } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelopesBulk } from '@fortawesome/free-solid-svg-icons';
 const LandingPage = () => {
-  const { events } = useEvents();
+  
   const { currentUser } = useAuth();
-
+  console.log('current userrrrrrr', currentUser);
   return (
     <>
       <div className='landing-page'>

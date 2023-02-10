@@ -25,6 +25,8 @@ import ResetPassword from './pages/ResetPassword';
 import FormulaireContact from './pages/FormulaireContact';
 import BlogProvider from './context/BlogContext';
 import BlogOrganiser from './pages/BlogOrganiser';
+import Search from './pages/Recherche';
+import SearchBlog from './pages/RechercheBlog';
 
 export const NavLayout = () => {
   const { currentUser } = useAuth();
@@ -84,6 +86,7 @@ const App = () => {
                         path='/organiserBlog'
                         element={<BlogOrganiser />}
                       />
+                      <Route path='/rechercheBlog' element={<SearchBlog />} />
                     </Route>
                   </Route>
                 </Routes>
