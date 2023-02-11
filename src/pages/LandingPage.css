@@ -9,49 +9,27 @@
 .xy {
   color: white;
   font-size: 40px;
-  padding: 60px 0 0 10vw;
+  padding: 60px 0 0 5rem;
   position: relative;
 }
 .opponent {
   color: white;
   font-size: 20px;
-  padding-left: 10vw;
+  padding-left: 5.1rem;
   margin: 7px 0;
+  margin-bottom: 15px;
 }
 .section-slogan {
   background: #242269 !important;
-  height: 55vh;
+
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   /* padding-left: 15px; */
   /* margin-bottom: 20px; */
 }
-
-.iconAM {
-  margin-top: 50px;
-  width: 320px;
-  font-size: 40px;
-  align-items: center;
-}
-
-.iconAM2 {
-  margin-top: 20px;
-  width: 320px;
-  font-size: 40px;
-  align-items: center;
-}
-
-/* .textcommentaireLP {
-  text-align: center;
-  padding: 17px;
-}
-
-.textcommentaireLP2 {
-  padding: 20px;
-  text-align: center;
-} */
 
 .comment-footer {
   display: flex;
@@ -109,8 +87,26 @@
 .blabla {
   margin-top: 15px;
 }
+.aigle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+
+  margin-bottom: 15px;
+}
 
 @media (min-width: 768px) {
+  .aigle {
+    display: flex;
+    flex-direction: column;
+    width: 45rem;
+    height: 45rem;
+    z-index: 900;
+    padding-right: 3rem;
+  }
   .prez {
     /* display: flex;
     align-items: center;
@@ -123,14 +119,14 @@
     z-index: 300;
   }
   .contactLP {
-    height: 45vh;
-    width: 45vh;
+    height: 40vh;
+    width: 35vh;
     background-color: #af88f4;
     position: relative;
     border-radius: 15px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    right: 18vh;
-    bottom: 15vh;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    right: 8vh;
+    bottom: 5vh;
     /* margin-left: 37vh; */
     z-index: 1030;
   }
@@ -143,7 +139,7 @@
   }
   .minititre {
     flex-grow: 1;
-    padding: 40px;
+    padding: 30px;
     padding-bottom: 0px;
     width: 400px;
   }
@@ -151,6 +147,7 @@
     position: relative;
     z-index: 1000;
     margin-top: 60px;
+    padding-bottom: 10rem;
   }
   .montagne {
     flex-grow: 4;
@@ -165,12 +162,12 @@
     height: 40vh;
   }
   .montagne:hover {
-    transform: scale(1.2);
+    transform: scale(1.3);
   }
   h1 {
     color: white;
     font-size: 90px;
-    padding: 60px 0 0 10vw;
+    padding: 20px 0 0 50px;
     position: relative;
   }
   .blabla {
@@ -178,15 +175,16 @@
     font-size: 14px;
     /* padding-left: 10vw; */
     padding-top: 20px;
-    padding-right: 90px;
+    padding-right: 50px;
     max-width: 600px;
   }
 
   .section-slogan {
     background: #242269 !important;
-    height: 55vh;
+    height: 75vh;
     width: 100%;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     /* padding-left: 15px; */

@@ -1,15 +1,11 @@
 import Header from '../components/Header';
-import { useEffect, useState } from 'react';
 import './LandingPage.css';
 import { Link } from 'react-router-dom';
 import { NavLayout } from '../App';
 import Footer from '../components/Footer';
 import { useAuth } from '../context/AuthContext';
-import { Button, Image } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelopesBulk } from '@fortawesome/free-solid-svg-icons';
+import Button0 from '../components/button0';
 const LandingPage = () => {
-  
   const { currentUser } = useAuth();
   console.log('current userrrrrrr', currentUser);
   return (
@@ -23,6 +19,9 @@ const LandingPage = () => {
             <h1 className='xy'>Xiong Ying WushuGuan</h1>
             <p className='opponent'> ONLY ONE OPPONENT : YOURSELF </p>
           </div>
+          <div>
+            <img className='aigle' src='assets/aigle.png' alt='aigle' />
+          </div>
         </section>
         <div className='prez'>
           <div className='minititre'>
@@ -30,7 +29,7 @@ const LandingPage = () => {
               <h6 className='mb-0'>Bienvenue sur le site de l'association</h6>
             </div>
             <div>
-              <h3 className='mb-15'>L'école de l'aigle bienveillant</h3>
+              <h3 className='ecole mb-15'>L'école de l'aigle bienveillant</h3>
               <p className='blabla'>
                 Notre association est issue d'une volonté de nous retrouver
                 autour de notre passion commune le Kung-fu Wushu. Fort de 30 ans
@@ -45,14 +44,16 @@ const LandingPage = () => {
             <p className='contactSousTitre mb-15 '>
               Cliquez sur le lien ci dessous
             </p>
-            <Link to={'/formulairecontact'} className='boxiconLP'>
-              <div className='nav-link'>
+            <Link to={'/formulairecontact'}>
+              {/* <div className='nav-link'>
                 <FontAwesomeIcon
                   icon={faEnvelopesBulk}
                   color={'white'}
                   className='iconNB fa-2xl'
-                />
-              </div>
+                /> */}
+
+              <Button0 />
+              {/* </div> */}
             </Link>
           </div>
           <div className='cubeLP'></div>
