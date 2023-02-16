@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 import { NavLayout } from '../App';
 import Footer from '../components/Footer';
 import { useAuth } from '../context/AuthContext';
-import Button0 from '../components/button0';
+import Button0 from '../components/Button0';
+import Button1 from '../components/Button1';
+
 const LandingPage = () => {
   const { currentUser } = useAuth();
   console.log('current userrrrrrr', currentUser);
@@ -20,7 +22,7 @@ const LandingPage = () => {
             <p className='opponent'> ONLY ONE OPPONENT : YOURSELF </p>
           </div>
           <div>
-            <img className='aigle' src='assets/aigle.png' alt='aigle' />
+            <img className='aigle' src='assets/Ellipse.png' alt='aigle' />
           </div>
         </section>
         <div className='prez'>
@@ -52,7 +54,7 @@ const LandingPage = () => {
                   className='iconNB fa-2xl'
                 /> */}
 
-              <Button0 />
+              <Button1 />
               {/* </div> */}
             </Link>
           </div>

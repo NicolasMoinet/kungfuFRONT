@@ -13,7 +13,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 import './Recherche.css';
-import { useAuth } from '../context/AuthContext';
+// import { useAuth } from '../context/AuthContext';
 
 //Creation de variable tampon pour stocker les filtres actifs, les mettre à jour et déclencher ou non le filtrage global des events
 let listEvents: EventType[] = [];
@@ -48,6 +48,7 @@ const Search = () => {
 
   const handleInputSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     filterSearchBar = e.currentTarget.value;
+
     setSearchFilters(filterSearchBar);
     let resultActivFilter = [...activeFilters];
     let isTitleIactiveFilter = resultActivFilter.includes('Title');
@@ -96,11 +97,13 @@ const Search = () => {
       case 'Date':
         filteredDate = '';
         setDateFilters('');
+        setEvents(listEvents);
         break;
 
       case 'Title':
         filterSearchBar = '';
         setSearchFilters('');
+        setEvents(listEvents);
         break;
     }
     // on reappelle allFilter pour redeclencher un nouveau filtre en prenant en compte le filtre que l on vient de supprimer
@@ -112,8 +115,11 @@ const Search = () => {
     let resultFilteredEvents: EventType[] = [...listEvents];
     if (filterSearchBar) {
       resultFilteredEvents = resultFilteredEvents.filter((event) => {
-        return event.title.includes(filterSearchBar);
+        return event.title
+          .toLocaleLowerCase()
+          .includes(filterSearchBar.toLocaleLowerCase());
       });
+      console.log('recupdefiltersearchbarrrrr,', filterSearchBar);
     }
 
     if (filteredDate) {
@@ -130,7 +136,7 @@ const Search = () => {
         // Si la différence entre inputDate et event.date [-5; 5] => true
 
         return (
-          convertMsjs <= 5 && convertMsjs >= -5 && dateEventMS > Date.now()
+          convertMsjs <= 10 && convertMsjs >= -10 && dateEventMS > Date.now()
         );
 
         // Sinon => false
@@ -150,7 +156,7 @@ const Search = () => {
       <div className='separation'></div>
       <div className='groupInput'>
         <Row className='rowR mb-3'>
-          {/* <Form.Group as={Col}>
+          <Form.Group as={Col}>
             <FloatingLabel label='Titre' className='mb-3'>
               <Form.Control
                 type='text'
@@ -161,7 +167,7 @@ const Search = () => {
                 value={searchFilters}
               />
             </FloatingLabel>
-          </Form.Group> */}
+          </Form.Group>
           <Form.Group as={Col}>
             <FloatingLabel label='Date' className='mb-3'>
               {' '}
@@ -178,11 +184,11 @@ const Search = () => {
         <ul className='container-buttonSUPP'>
           {activeFilters.map((filter) => (
             <li key={filter} className='activity filtre'>
-              <Button className='deleteButton'>
+              <Button className='custom-btn btn-9'>
                 {filter}{' '}
                 <FontAwesomeIcon
                   icon={faTrashCan}
-                  color={'red'}
+                  color={'white'}
                   className='ps-2 icon'
                   onClick={() => handleRemoveFilter(filter)}
                 />
@@ -194,6 +200,7 @@ const Search = () => {
 
       <h2 className='resultats mb-4'>Resultats</h2>
       <ThumbnailEvent events={events} />
+      
     </Container>
   );
 };

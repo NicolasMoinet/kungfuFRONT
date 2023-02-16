@@ -1,5 +1,4 @@
 import React, { useEffect, useState, FormEvent, useRef } from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import {
   Alert,
@@ -17,12 +16,13 @@ import './BlogOrganiser.css';
 import { isValid } from '../models/form-validate/validation';
 import { errorInfo } from '../models/form-validate/errorMessage';
 import { useBlog } from '../context/BlogContext';
+import Button1 from '../components/Button1';
 
 const BlogOrganiser = () => {
   const navigate = useNavigate();
   const [errorMsg, setErrorMsg] = useState<string>('');
   const [errorApiMessage, setErrorApiMessage] = useState<string[]>([]);
-
+  const [pictures, setPictures] = useState<File>();
   const axiosPrivate = useAxiosPrivate();
 
   const { handleToast } = useToast();
@@ -33,6 +33,14 @@ const BlogOrganiser = () => {
   const descrip = useRef<HTMLTextAreaElement>(null);
   //   const picture = useRef<HTMLSelectElement>(null)
 
+  const pictureUploader = (event: React.ChangeEvent<HTMLInputElement>) => {
+    let files = event.target.files?.[0];
+    if (!files) {
+      return;
+    }
+    setPictures(files);
+  };
+
   const handleSubmitForm = (e: FormEvent) => {
     //quand on click sur le button pour envoyer les données
     e.preventDefault();
@@ -40,7 +48,7 @@ const BlogOrganiser = () => {
 
     const titleInput = title.current?.value;
     const dateInput = date.current?.value;
-    // let picture = picture.current?.value;
+
     let descripInput = descrip.current?.value;
 
     if (titleInput && dateInput && descripInput) {
@@ -60,17 +68,38 @@ const BlogOrganiser = () => {
       //     return;
       //   }
 
-      // Permet de retirer les endroits où il y a plus d'un espace entre 2 mots.
+      // Permet de retirer les endroits où il y a plus d'un espace entre 2 mots.peut etre pas valide comme restriction ici ?
 
-      let userInsert = {
-        title: titleInput,
-        date: dateInput,
-        description: descripInput,
-      };
-      console.log(userInsert);
+      // let userInsert = {
+      //   title: titleInput,
+      //   date: dateInput,
+      //   description: descripInput,
+      // };
 
-      axiosPrivate
-        .post('/blog', userInsert)
+      const formData = new FormData();
+
+      formData.append('title', titleInput);
+      formData.append('date', dateInput);
+      formData.append('description', descripInput);
+      formData.append('picture', pictures || '');
+
+      axiosPrivate({
+        method: 'post',
+        url: '/blog',
+        data: formData,
+        headers: { 'Content-Type': 'multipart/form-data' },
+      })
+        // .then((response) => response.blob)
+        // .then((response) => {
+        //   const reader = new FileReader();
+        //   reader.readAsDataURL(response.data);
+        //   reader.onloadend = () => {
+        //     let base64Data = reader.result;
+        //     if (base64Data) {
+        //       setPictures(base64Data.toString());
+        //     }
+        //   };
+        // })
         .then((response) => {
           let blogData = response.data;
           console.log('organiser, blogData evenement crée : ', blogData);
@@ -80,7 +109,7 @@ const BlogOrganiser = () => {
           if (response.status === 201) {
             blogData = { ...blogData, writer: [] };
 
-            // On rajoute cet évènement à notre liste d'évènements et on met à jour le state du context avec
+            // On rajoute cet article à notre liste de blog et on met à jour le state du context avec
             updatedBlogList = [...updatedBlogList, blogData];
             setBlog(updatedBlogList);
             setErrorMsg('');
@@ -146,9 +175,14 @@ const BlogOrganiser = () => {
               required
             />
           </Form.Group>
-          <Button className='button-signup my-3' type='submit'>
-            Créer
-          </Button>
+          <div>
+            <input type='file' onChange={pictureUploader} />
+          </div>
+          <div className='button9'>
+            <Button className='custom-btn btn-9' type='submit'>
+              Créer
+            </Button>
+          </div>
           {errorMsg && <Alert variant='danger'>{errorMsg}</Alert>}
           {errorApiMessage &&
             errorApiMessage.map((error, i) => (

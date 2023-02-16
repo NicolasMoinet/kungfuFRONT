@@ -120,7 +120,7 @@ const EventForm = ({ onFormSubmit }: EventFormProps) => {
           required
         />
       </FloatingLabel>
-      <Button type='submit' className='form-btn'>
+      <Button type='submit' className='custom-btn btn-9'>
         Valider
       </Button>
       {/* S'il y a un message d'erreur, on l'affiche dans une alerte */}

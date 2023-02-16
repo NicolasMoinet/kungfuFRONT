@@ -1,163 +1,199 @@
 .custom-btn {
-  width: 130px !important;
-  height: 40px !important;
-  color: #fff !important;
-  border-radius: 5px !important;
-  padding: 10px 25px !important;
+  z-index: 1000;
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
 
-  font-weight: 500 !important;
-  background: transparent !important;
-  cursor: pointer !important;
-  transition: all 0.3s ease !important;
-  position: relative !important;
-  display: inline-block !important;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
   box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1) !important;
-  outline: none !important;
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
 }
-/* 
+
 .btn-8 {
-  background-color: #f0ecfc !important;
-  background-image: linear-gradient(315deg, #f0ecfc 0%, #c797eb 74%) !important;
-  line-height: 42px !important;
-  padding: 0 !important;
-  border: none !important;
+  z-index: 1000;
+  background-color: transparent;
+  background-image: linear-gradient(315deg, #f0ecfc 0%, #c797eb 74%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
 }
 .btn-8 span {
-  position: relative !important;
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 .btn-8:before,
 .btn-8:after {
-  position: absolute !important;
-  content: '' !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  background: #c797eb !important;
-  /*box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
-              -4px -4px 6px 0 rgba(116, 125, 136, .2),
-    inset -4px -4px 6px 0 rgba(255,255,255,.5),
-    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);*/
-/* transition: all 0.3s ease !important;
-}
-.btn-8:before {
-  height: 0% !important;
-  width: 2px !important;
-}
-.btn-8:after {
-  width: 0% !important;
-  height: 2px !important;
-}
-.btn-8:hover:before {
-  height: 100% !important;
-}
-.btn-8:hover:after {
-  width: 100% !important;
-}
-.btn-8:hover {
-  background: transparent !important;
-}
-.btn-8 span:hover {
-  color: #c797eb !important;
-}
-.btn-8 span:before,
-.btn-8 span:after {
-  position: absolute !important;
-  content: '' !important;
-  left: 0 !important;
-  top: 0 !important;
-  background: #c797eb !important;
+  position: absolute;
+  content: '';
+  right: 0;
+  bottom: 0;
+  background: #c797eb;
   box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
     -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
     inset -4px -4px 6px 0 rgba(255, 255, 255, 0.5),
-    inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3) !important;
-  transition: all 0.3s ease !important;
+    inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
+  transition: all 0.3s ease;
+}
+.btn-8:before {
+  height: 0%;
+  width: 2px;
+}
+.btn-8:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-8:hover:before {
+  height: 100%;
+}
+.btn-8:hover:after {
+  width: 100%;
+}
+.btn-8:hover {
+  background: transparent;
+}
+.btn-8 span:hover {
+  color: #c797eb;
+}
+.btn-8 span:before,
+.btn-8 span:after {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  background: #c797eb;
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.5),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
+  transition: all 0.3s ease;
 }
 .btn-8 span:before {
-  width: 2px !important;
-  height: 0% !important;
+  width: 2px;
+  height: 0%;
 }
 .btn-8 span:after {
-  height: 2px !important;
-  width: 0% !important;
+  height: 2px;
+  width: 0%;
 }
 .btn-8 span:hover:before {
-  height: 100% !important;
+  height: 100%;
 }
 .btn-8 span:hover:after {
-  width: 100% !important;
-} */
-.btn-3 {
-  background: rgb(0, 172, 238) !important;
+  width: 100%;
+}
+/* .btn-3 {
+  background: rgb(0, 172, 238) ;
   background: linear-gradient(
     0deg,
     rgba(0, 172, 238, 1) 0%,
     rgba(2, 126, 251, 1) 100%
-  ) !important;
-  width: 130px !important;
-  height: 40px !important;
-  line-height: 42px !important;
-  padding: 0 !important;
-  border: none !important;
+  ) ;
+  width: 130px ;
+  height: 40px ;
+  line-height: 42px ;
+  padding: 0 ;
+  border: none ;
 }
 .btn-3 span {
-  position: relative !important;
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
+  position: relative ;
+  display: block ;
+  width: 100% ;
+  height: 100% ;
 }
 .btn-3:before,
 .btn-3:after {
-  position: absolute !important;
-  content: '' !important;
-  right: 0 !important;
-  top: 0 !important;
-  background: rgba(2, 126, 251, 1) !important;
-  transition: all 0.3s ease !important;
+  position: absolute ;
+  content: '' ;
+  right: 0 ;
+  top: 0 ;
+  background: rgba(2, 126, 251, 1) ;
+  transition: all 0.3s ease ;
 }
 .btn-3:before {
-  height: 0% !important;
-  width: 2px !important;
+  height: 0% ;
+  width: 2px ;
 }
 .btn-3:after {
-  width: 0% !important;
-  height: 2px !important;
+  width: 0% ;
+  height: 2px ;
 }
 .btn-3:hover {
-  background: #ede9f4 !important;
-  box-shadow: none !important;
+  background: #ede9f4 ;
+  box-shadow: none ;
 }
 .btn-3:hover:before {
-  height: 100% !important;
+  height: 100% ;
 }
 .btn-3:hover:after {
-  width: 100% !important;
+  width: 100% ;
 }
 .btn-3 span:hover {
-  color: rgba(2, 126, 251, 1) !important;
+  color: rgba(2, 126, 251, 1) ;
 }
 .btn-3 span:before,
 .btn-3 span:after {
-  position: absolute !important;
-  content: '' !important;
-  left: 0 !important;
-  bottom: 0 !important;
-  background: rgba(2, 126, 251, 1) !important;
-  transition: all 0.3s ease !important;
+  position: absolute ;
+  content: '' ;
+  left: 0 ;
+  bottom: 0 ;
+  background: rgba(2, 126, 251, 1) ;
+  transition: all 0.3s ease ;
 }
 .btn-3 span:before {
-  width: 2px !important;
-  height: 0% !important;
+  width: 2px ;
+  height: 0% ;
 }
 .btn-3 span:after {
-  width: 0% !important;
-  height: 2px !important;
+  width: 0% ;
+  height: 2px ;
 }
 .btn-3 span:hover:before {
-  height: 100% !important;
+  height: 100% ;
 }
 .btn-3 span:hover:after {
-  width: 100% !important;
+  width: 100% ;
+} */
+/* .btn-13 {
+  background-color: #89d8d3;
+background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
+  border: none;
+  z-index: 1;
 }
+.btn-13:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 5px;
+   background-color: #4dccc6;
+background-image: linear-gradient(315deg, #4dccc6 0%, #96e4df 74%);
+  box-shadow:
+   -7px -7px 20px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #0002,
+   4px 4px 5px 0px #0001;
+  transition: all 0.3s ease;
+}
+.btn-13:hover {
+  color: #fff;
+}
+.btn-13:hover:after {
+  top: 0;
+  height: 100%;
+}
+.btn-13:active {
+  top: 2px;
+} */

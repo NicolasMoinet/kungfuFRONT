@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Button, OverlayTrigger, Popover } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Button1 from '../components/Button1';
 import './FormulaireContact.css';
 const FormulaireContact = () => {
   // Définition du composant popover qui va s'afficher quand on essaie de contacter un organisateur
@@ -82,9 +83,7 @@ const FormulaireContact = () => {
                   placement='top'
                   overlay={popover}
                 >
-                  <Button className='button-returnFC'>
-                    Envoyer le formulaire
-                  </Button>
+                  <Button1/>
                 </OverlayTrigger>
               </form>
             </div>

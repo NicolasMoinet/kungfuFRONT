@@ -7,7 +7,7 @@ const AdminBackLink = () => {
   return (
     <>
       <Link to={'/admin'}>
-        <Button className='my-3 admin-link'>Page Admin</Button>
+        <Button className='custom-btn btn-9'>Admin</Button>
       </Link>
     </>
   );

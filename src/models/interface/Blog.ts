@@ -1,13 +1,10 @@
 import { WriterType } from './Writer';
 
-
 export interface BlogType {
-id?: string;
+  id?: string;
   title: string;
   writer: WriterType;
   date: string;
   description: string;
   picture?: string;
-  
 }
-

@@ -5,15 +5,15 @@
 .swiper-button-next,
 .swiper-button-prev {
   display: none;
-  color: #af88f4 !important;
+  color: #af88f4;
 }
 
 .swiper-pagination {
-  bottom: 1px !important;
+  bottom: 1px;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #af88f4 !important;
+  background-color: #af88f4;
 }
 .imgThumbmail {
   border-radius: 30px;
@@ -36,8 +36,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-left: 10px;
+  /* padding-left: 10px; */
   width: 100%;
+  align-items: center;
 }
 
 .event-thumbnail-infos {
@@ -64,19 +65,144 @@
   text-align: end;
 }
 
-.event-thumbnail-btn,
+/* .event-thumbnail-btn,
 .event-thumbnail-btn:active {
   align-self: flex-end;
   font-size: 1.2em;
-  background-color: #af88f4 !important;
+  background-color: #af88f4                                                                                                                                                                                                           ;
   border: none;
 }
 
 .event-thumbnail-btn:hover {
   background-color: #242269;
-}
+} */
 
 @media screen and (min-width: 768px) {
+  .custom-btn {
+    z-index: 1000 !important;
+    width: 130px !important;
+    height: 40px !important;
+    color: #fff;
+    border-radius: 5px !important;
+    padding: 10px 25px !important;
+
+    font-weight: 500 !important;
+    background: transparent !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    display: inline-block !important;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+      7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1) !important;
+    outline: none !important;
+  }
+
+  .btn-9 {
+    border: none;
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+  .btn-9:after {
+    position: absolute;
+    content: ' ';
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1fd1f9;
+    background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
+    transition: all 0.3s ease;
+  }
+  .btn-9:hover {
+    background: transparent;
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
+      -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
+      inset -4px -4px 6px 0 rgba(255, 255, 255, 0.5),
+      inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
+    color: #fff;
+  }
+  .btn-9:hover:after {
+    -webkit-transform: scale(2) rotate(180deg);
+    transform: scale(2) rotate(180deg);
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
+      -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
+      inset -4px -4px 6px 0 rgba(255, 255, 255, 0.5),
+      inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
+  }
+  /* .btn-3 {
+  background: rgb(0, 172, 238) ;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 172, 238, 1) 0%,
+    rgba(2, 126, 251, 1) 100%
+  ) ;
+  width: 130px ;
+  height: 40px ;
+  line-height: 42px ;
+  padding: 0 ;
+  border: none ;
+}
+.btn-3 span {
+  position: relative ;
+  display: block ;
+  width: 100% ;
+  height: 100% ;
+}
+.btn-3:before,
+.btn-3:after {
+  position: absolute ;
+  content: '' ;
+  right: 0 ;
+  top: 0 ;
+  background: rgba(2, 126, 251, 1) ;
+  transition: all 0.3s ease ;
+}
+.btn-3:before {
+  height: 0% ;
+  width: 2px ;
+}
+.btn-3:after {
+  width: 0% ;
+  height: 2px ;
+}
+.btn-3:hover {
+  background: #ede9f4 ;
+  box-shadow: none ;
+}
+.btn-3:hover:before {
+  height: 100% ;
+}
+.btn-3:hover:after {
+  width: 100% ;
+}
+.btn-3 span:hover {
+  color: rgba(2, 126, 251, 1) ;
+}
+.btn-3 span:before,
+.btn-3 span:after {
+  position: absolute ;
+  content: '' ;
+  left: 0 ;
+  bottom: 0 ;
+  background: rgba(2, 126, 251, 1) ;
+  transition: all 0.3s ease ;
+}
+.btn-3 span:before {
+  width: 2px ;
+  height: 0% ;
+}
+.btn-3 span:after {
+  width: 0% ;
+  height: 2px ;
+}
+.btn-3 span:hover:before {
+  height: 100% ;
+}
+.btn-3 span:hover:after {
+  width: 100% ;
+} */
+
   .swiper-button-next,
   .swiper-button-prev {
     display: block;

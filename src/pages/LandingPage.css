@@ -94,7 +94,7 @@
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
-
+  margin-right: 2rem;
   margin-bottom: 15px;
 }
 
@@ -105,7 +105,9 @@
     width: 45rem;
     height: 45rem;
     z-index: 900;
-    padding-right: 3rem;
+    /* padding-right: 3rem; */
+    margin-right: 9rem;
+    margin-top: 2rem;
   }
   .prez {
     /* display: flex;
@@ -146,8 +148,9 @@
   .titre {
     position: relative;
     z-index: 1000;
-    margin-top: 60px;
+    /* margin-top: 60px; */
     padding-bottom: 10rem;
+    top: 7rem;
   }
   .montagne {
     flex-grow: 4;

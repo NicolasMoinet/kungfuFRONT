@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
 import Image from 'react-bootstrap/Image';
 import { useLocation, useNavigate } from 'react-router-dom';
-
 import EventModal from './EventModal';
 import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -75,12 +74,16 @@ const ThumbnailEvent = ({ eventType, events }: ThumbnailEventProps) => {
               (isActive || isNext || isPrev) && (
                 <Card className='event-thumbnail'>
                   <div className='event-thumbnail-avatar'>
-                    <Image
-                      src='/assets/fight.jpg' // Affiche la photo de l'orga si elle existe
-                      alt='panda avatar'
-                      thumbnail
-                      // roundedCircle
-                    />
+                    {event.picture ? (
+                      <Image
+                        src={`http://localhost:8080/api/events/${event?.picture}`} // Affiche la photo de l'orga si elle existe
+                        alt='panda avatar'
+                        thumbnail
+                        // roundedCircle
+                      />
+                    ) : (
+                      <p>Pas d'image</p>
+                    )}
                   </div>
                   <div className='event-thumbnail-body'>
                     <div className='event-thumbnail-top-content'>
@@ -98,15 +101,14 @@ const ThumbnailEvent = ({ eventType, events }: ThumbnailEventProps) => {
                         </Card.Text>
                       </div>
                     </div>
-
+                    {/* <Button0 /> */}
                     <Button
-                      className='event-thumbnail-btn'
+                      className='custom-btn btn-9'
                       onClick={() => {
-                        alert('test');
                         handleClick(event);
                       }}
                     >
-                      + de détails
+                      Détails
                     </Button>
                   </div>
                 </Card>

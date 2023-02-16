@@ -1,5 +1,4 @@
 import React, { useEffect, useState, FormEvent, useRef } from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import {
   Alert,
@@ -17,6 +16,8 @@ import './Organiser.css';
 import { isValid } from '../models/form-validate/validation';
 import { errorInfo } from '../models/form-validate/errorMessage';
 import { useEvents } from '../context/EventsContext';
+import Button1 from '../components/Button1';
+import Button0 from '../components/Button0';
 
 const Organiser = () => {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ const Organiser = () => {
   const [errorApiMessage, setErrorApiMessage] = useState<string[]>([]);
 
   const axiosPrivate = useAxiosPrivate();
-
+  const [pictures, setPictures] = useState<File>();
   const { handleToast } = useToast();
   const { events, setEvents } = useEvents();
 
@@ -36,6 +37,13 @@ const Organiser = () => {
   const postalCode = useRef<HTMLInputElement>(null);
   const city = useRef<HTMLInputElement>(null);
 
+  const pictureUploader = (event: React.ChangeEvent<HTMLInputElement>) => {
+    let files = event.target.files?.[0];
+    if (!files) {
+      return;
+    }
+    setPictures(files);
+  };
   const handleSubmitForm = (e: FormEvent) => {
     //quand on click sur le button pour envoyer les données
     e.preventDefault();
@@ -94,19 +102,33 @@ const Organiser = () => {
         console.log('description avec 1 seul espace max : ', descripInput);
       }
 
-      let userInsert = {
-        title: titleInput,
-        date: dateInput,
-        time: timeInput,
-        address: addressInput,
-        postalCode: postalCodeInput,
-        city: cityInput,
-        description: descripInput,
-      };
-      console.log(userInsert);
+      // let userInsert = {
+      //   title: titleInput,
+      //   date: dateInput,
+      //   time: timeInput,
+      //   address: addressInput,
+      //   postalCode: postalCodeInput,
+      //   city: cityInput,
+      //   description: descripInput,
+      // };
+      // console.log(userInsert);
+      const formData = new FormData();
 
-      axiosPrivate
-        .post('/events', userInsert)
+      formData.append('title', titleInput);
+      formData.append('date', dateInput);
+      formData.append('description', descripInput);
+      formData.append('picture', pictures || '');
+      formData.append('time', timeInput);
+      formData.append('address', addressInput);
+      formData.append('postalCode', postalCodeInput || '');
+      formData.append('city', cityInput);
+
+      axiosPrivate({
+        method: 'post',
+        url: '/events',
+        data: formData,
+        headers: { 'Content-Type': 'multipart/form-data' },
+      })
         .then((response) => {
           let eventData = response.data;
           console.log('organiser, eventdata evenement crée : ', eventData);
@@ -125,7 +147,7 @@ const Organiser = () => {
               color: 'success',
               delay: 5000,
             });
-            navigate('/user/interface');
+            navigate('/recherche');
           }
         })
 
@@ -133,7 +155,7 @@ const Organiser = () => {
           console.log('Organiser - HandleSubmit Error : ', error);
           if (error.response.status === 401) {
             localStorage.removeItem('accessToken');
-            navigate('/connexion');
+            navigate('/user/profile');
             return;
           }
           setErrorApiMessage(error.response.data.message);
@@ -208,9 +230,13 @@ const Organiser = () => {
                   required
                 />
               </Form.Group>
-              <Button className='button-signup my-3' type='submit'>
+              {/* <Button className='button-signup my-3' type='submit'>
                 Créer
-              </Button>
+              </Button> */}
+              <div>
+                <input type='file' onChange={pictureUploader} />
+              </div>
+              <Button1 />
               {errorMsg && <Alert variant='danger'>{errorMsg}</Alert>}
               {errorApiMessage &&
                 errorApiMessage.map((error, i) => (

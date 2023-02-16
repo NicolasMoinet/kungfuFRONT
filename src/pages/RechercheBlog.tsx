@@ -5,7 +5,6 @@ import { BlogType } from '../models/interface/Blog';
 import {
   Button,
   Card,
-  CardGroup,
   Col,
   Container,
   FloatingLabel,
@@ -15,7 +14,8 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 import './Recherche.css';
-// import { useAuth } from '../context/AuthContext';
+import Button1 from '../components/Button1';
+import Footer from '../components/Footer';
 
 //Creation de variable tampon pour stocker les filtres actifs, les mettre à jour et déclencher ou non le filtrage global des events
 let listBlog: BlogType[] = [];
@@ -27,6 +27,7 @@ const SearchBlog = () => {
   const [activeFilters, setActiveFilters] = useState<string[]>([]);
   const [dateFilters, setDateFilters] = useState<string>('');
   const [searchFilters, setSearchFilters] = useState<string>('');
+  const [pictures, setPictures] = useState<string>();
 
   useEffect(() => {
     const getBlog = async () => {
@@ -34,17 +35,36 @@ const SearchBlog = () => {
         const response: AxiosResponse<BlogType[]> = await axios.get(
           `http://localhost:8080/api/blog`
         );
-        console.log('Recherche - fetch articles - Response : ', response.data);
 
         listBlog = response.data;
-        console.log('listBlogobjett : ', listBlog);
-        setBlog(response.data);
+
+        setBlog(listBlog);
       } catch (error) {
         console.log('Recherche - fetch articles - Error : ', error);
       }
     };
     getBlog();
   }, []);
+
+  /*const getImage = async (imageName: string) => {
+    const response = await axiosPrivate.get(
+      `http://localhost:8080/api/blog/${imageName}`,
+      {
+        headers: { 'Content-Type': 'multipart/form-data' },
+        responseType: 'blob',
+      }
+    );
+    const blob = response.data;
+
+    const reader = new FileReader();
+    reader.readAsDataURL(blob);
+    reader.onloadend = () => {
+      let base64Data = reader.result;
+      if (base64Data) {
+        return base64Data.toString();
+      }
+    };
+  };*/
 
   ////////////////////////////////////////////////////HANDLEFILTERS///////////////////////////////////////////////////////////////////////////////////
 
@@ -98,11 +118,13 @@ const SearchBlog = () => {
       case 'Date':
         filteredDate = '';
         setDateFilters('');
+        setBlog(listBlog);
         break;
 
       case 'Title':
         filterSearchBar = '';
         setSearchFilters('');
+        setBlog(listBlog);
         break;
     }
     // on reappelle allFilter pour redeclencher un nouveau filtre en prenant en compte le filtre que l on vient de supprimer
@@ -114,7 +136,9 @@ const SearchBlog = () => {
     let resultFilteredBlog: BlogType[] = [...listBlog];
     if (filterSearchBar) {
       resultFilteredBlog = resultFilteredBlog.filter((blog) => {
-        return blog.title.includes(filterSearchBar);
+        return blog.title
+          .toLocaleLowerCase()
+          .includes(filterSearchBar.toLocaleLowerCase());
       });
     }
 
@@ -150,7 +174,7 @@ const SearchBlog = () => {
       <div className='separation'></div>
       <div className='groupInput'>
         <Row className='rowR mb-3'>
-          {/* <Form.Group as={Col}>
+          <Form.Group as={Col}>
             <FloatingLabel label='Titre' className='mb-3'>
               <Form.Control
                 type='text'
@@ -161,7 +185,7 @@ const SearchBlog = () => {
                 value={searchFilters}
               />
             </FloatingLabel>
-          </Form.Group> */}
+          </Form.Group>
           <Form.Group as={Col}>
             <FloatingLabel label='Date' className='mb-3'>
               {' '}
@@ -178,11 +202,11 @@ const SearchBlog = () => {
         <ul className='container-buttonSUPP'>
           {activeFilters.map((filter) => (
             <li key={filter} className='activity filtre'>
-              <Button className='deleteButton'>
+              <Button className='custom-btn btn-9'>
                 {filter}{' '}
                 <FontAwesomeIcon
                   icon={faTrashCan}
-                  color={'red'}
+                  color={'white'}
                   className='ps-2 icon'
                   onClick={() => handleRemoveFilter(filter)}
                 />
@@ -194,9 +218,16 @@ const SearchBlog = () => {
 
       <h2 className='resultats center mb-4'>Articles</h2>
       <div className='container'>
-        {blog.map(({ id, title, date, picture, description }) => (
+        {blog.map(({ id, title, date, picture }) => (
           <Card style={{ width: '25rem' }} key={id}>
-            <Card.Img variant='top' src='assets/shaolin' />
+            {picture ? (
+              <Card.Img
+                variant='top'
+                src={`http://localhost:8080/api/blog/${picture}`}
+              />
+            ) : (
+              <p>Pas d'image</p>
+            )}
             <Card.Body>
               <Card.Title>{title}</Card.Title>
               <Card.Text>
