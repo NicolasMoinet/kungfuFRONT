@@ -18,7 +18,7 @@ const FormulaireContact = () => {
   return (
     <div className='ContactForm'>
       <section className='bandeauFC'>
-      {/* <img className='bandeauLP' src='/assets/BeandeauACC.svg' alt='fond' />; */}
+        {/* <img className='bandeauLP' src='/assets/BeandeauACC.svg' alt='fond' />; */}
         <h2 className='titleFC'>Formulaire Contact </h2>
       </section>
       <div className='containerFC'>
@@ -38,7 +38,7 @@ const FormulaireContact = () => {
             <div className='contactForm'>
               <form id='contact-form' noValidate>
                 {/* Row 1 of form */}
-                <div className='row formRow'>
+                <div className='row formRow mb-4'>
                   <div className='col-6'>
                     <input
                       type='text'
@@ -47,7 +47,7 @@ const FormulaireContact = () => {
                       placeholder='Nom'
                     ></input>
                   </div>
-                  <div className='col-6'>
+                  <div className='col-6 '>
                     <input
                       type='email'
                       name='email'
@@ -57,7 +57,7 @@ const FormulaireContact = () => {
                   </div>
                 </div>
                 {/* Row 2 of form */}
-                <div className='row formRow'>
+                <div className='row formRow mb-4'>
                   <div className='col'>
                     <input
                       type='text'
@@ -83,7 +83,7 @@ const FormulaireContact = () => {
                   placement='top'
                   overlay={popover}
                 >
-                  <Button1/>
+                  <Button1 />
                 </OverlayTrigger>
               </form>
             </div>

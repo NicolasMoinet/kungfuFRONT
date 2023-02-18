@@ -28,7 +28,7 @@ const ThumbnailEvent = ({ eventType, events }: ThumbnailEventProps) => {
   const location = useLocation();
   // useNavigate permet de nous rediriger vers une autre page
   const navigate = useNavigate();
-
+  const defaultImage = '/public/assets/Elipse.png';
   // fonction qui gère le click dans la vignette d'event selon la page où l'on se trouve
   const handleClick = (event: EventType) => {
     console.log('Thumbnail clicked - location : ', location);
@@ -75,20 +75,24 @@ const ThumbnailEvent = ({ eventType, events }: ThumbnailEventProps) => {
                 <Card className='event-thumbnail'>
                   <div className='event-thumbnail-avatar'>
                     {event.picture ? (
-                      <Image
+                      <Card.Img
                         src={`http://localhost:8080/api/events/${event?.picture}`} // Affiche la photo de l'orga si elle existe
                         alt='panda avatar'
-                        thumbnail
+                        style={{ objectFit: 'cover', height: '200px' }}
                         // roundedCircle
                       />
                     ) : (
-                      <p>Pas d'image</p>
+                      <Card.Img
+                        src='assets/Ellipse.png'
+                        alt='aigle'
+                        style={{ objectFit: 'cover', height: '200px' }}
+                      />
                     )}
                   </div>
                   <div className='event-thumbnail-body'>
                     <div className='event-thumbnail-top-content'>
-                      <div className='event-thumbnail-block event-thumbnail-header'>
-                        <Card.Title className='event-thumbnail-infos event-thumbnail-title'>
+                      <div className='event-thumbnail-block event-thumbnail-header '>
+                        <Card.Title className='event-thumbnail-infos event-thumbnail-title pt-0.5rem'>
                           {event?.title}
                         </Card.Title>
                       </div>

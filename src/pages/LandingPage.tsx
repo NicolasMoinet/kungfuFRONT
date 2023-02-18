@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import { NavLayout } from '../App';
 import Footer from '../components/Footer';
 import { useAuth } from '../context/AuthContext';
-import Button0 from '../components/Button0';
 import Button1 from '../components/Button1';
+import { Card, Col, Row } from 'react-bootstrap';
 
 const LandingPage = () => {
   const { currentUser } = useAuth();
@@ -16,10 +16,16 @@ const LandingPage = () => {
         {currentUser ? <NavLayout /> : <Header />}
         {/* si l'utilisateur est deja connecte on voudrait voir le composent Navlo que le comp Header  */}
         <section className='section-slogan'>
-          {/* <img className='Fond-head' src='vector4.svg' alt='Montagne'/> */}
           <div className='Titre'>
-            <h1 className='xy'>Xiong Ying WushuGuan</h1>
-            <p className='opponent'> ONLY ONE OPPONENT : YOURSELF </p>
+            <img
+              className='Fond-head '
+              src='assets/BandeauACC.svg'
+              alt='Montagne'
+            />
+            <div className='Bandeau1'>
+              <h1 className='xy'>Xiong Ying Wushu Guan</h1>
+              {/* <p className='opponent'> ONLY ONE OPPONENT : YOURSELF </p> */}
+            </div>
           </div>
           <div>
             <img className='aigle' src='assets/Ellipse.png' alt='aigle' />
@@ -42,10 +48,8 @@ const LandingPage = () => {
           </div>
 
           <div className='contactLP'>
-            <h2 className='contactTitre '>Contactez nous</h2>
-            <p className='contactSousTitre mb-15 '>
-              Cliquez sur le lien ci dessous
-            </p>
+            <h2 className='contactTitre '>Contact</h2>
+
             <Link to={'/formulairecontact'}>
               {/* <div className='nav-link'>
                 <FontAwesomeIcon
@@ -61,6 +65,67 @@ const LandingPage = () => {
           <div className='cubeLP'></div>
         </div>
       </div>
+      <section className='prezzz2'>
+        <Row className='justify-content-center'>
+          <Col md={4} className='mb-4'>
+            <Card style={{ height: '100%' }}>
+              <Card.Img
+                variant='top'
+                src={`/assets/dragon.png`}
+                style={{ objectFit: 'cover', height: '200px' }}
+              />
+
+              <Card.Body>
+                <Card.Title>Coucou</Card.Title>
+                <Card.Text>
+                  Decouvrez l'article, cliquez sur le lien ci dessous
+                </Card.Text>
+              </Card.Body>
+              <Card.Footer className='d-flex justify-content-center'>
+                <button className='custom-btn btn-9'>Lire</button>
+              </Card.Footer>
+            </Card>
+          </Col>
+          <Col md={4} className='mb-4'>
+            <Card style={{ height: '100%' }}>
+              <Card.Img
+                variant='top'
+                src={`/public/assets/dragon`}
+                style={{ objectFit: 'cover', height: '200px' }}
+              />
+
+              <Card.Body>
+                <Card.Title>Coucou</Card.Title>
+                <Card.Text>
+                  Decouvrez l'article, cliquez sur le lien ci dessous
+                </Card.Text>
+              </Card.Body>
+              <Card.Footer className='d-flex justify-content-center'>
+                <button className='custom-btn btn-9'>Lire</button>
+              </Card.Footer>
+            </Card>
+          </Col>
+          <Col md={4} className='mb-4 px-4'>
+            <Card style={{ height: '100%' }}>
+              <Card.Img
+                variant='top'
+                src={`/public/assets/dragon`}
+                style={{ objectFit: 'cover', height: '200px' }}
+              />
+
+              <Card.Body>
+                <Card.Title>Coucou</Card.Title>
+                <Card.Text>
+                  Decouvrez l'article, cliquez sur le lien ci dessous
+                </Card.Text>
+              </Card.Body>
+              <Card.Footer className='d-flex justify-content-center'>
+                <button className='custom-btn btn-9'>Lire</button>
+              </Card.Footer>
+            </Card>
+          </Col>
+        </Row>
+      </section>
       <div>
         <img
           className='montagne img-thumbmail'

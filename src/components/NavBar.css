@@ -10,7 +10,7 @@
 .nav-link-container {
   width: 100%;
   text-align: center;
-  background: #242269;
+  background: #af88f4;
 }
 
 .boxicon {
@@ -31,7 +31,7 @@
   .nav-link-container {
     width: 100%;
     text-align: center;
-    background: #242269;
+    background: #af88f4;
     display: flex;
     justify-content: flex-end;
   }

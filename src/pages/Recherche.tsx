@@ -148,7 +148,7 @@ const Search = () => {
   // const image_url = '../../public/assets/montagnerech.jpg';
 
   return (
-    <Container className='rechercheContenair'>
+    <div className='rechercheContenair'>
       <div className='bandeauTitreR'>
         <h1>Rechercher un événement</h1>
       </div>
@@ -156,7 +156,7 @@ const Search = () => {
       <div className='separation'></div>
       <div className='groupInput'>
         <Row className='rowR mb-3'>
-          <Form.Group as={Col}>
+          <Form.Group as={Col} md>
             <FloatingLabel label='Titre' className='mb-3'>
               <Form.Control
                 type='text'
@@ -168,7 +168,7 @@ const Search = () => {
               />
             </FloatingLabel>
           </Form.Group>
-          <Form.Group as={Col}>
+          <Form.Group as={Col} md>
             <FloatingLabel label='Date' className='mb-3'>
               {' '}
               <Form.Control
@@ -200,8 +200,7 @@ const Search = () => {
 
       <h2 className='resultats mb-4'>Resultats</h2>
       <ThumbnailEvent events={events} />
-      
-    </Container>
+    </div>
   );
 };
 

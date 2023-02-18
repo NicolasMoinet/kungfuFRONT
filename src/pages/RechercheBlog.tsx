@@ -5,6 +5,7 @@ import { BlogType } from '../models/interface/Blog';
 import {
   Button,
   Card,
+  CardGroup,
   Col,
   Container,
   FloatingLabel,
@@ -14,8 +15,6 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 import './Recherche.css';
-import Button1 from '../components/Button1';
-import Footer from '../components/Footer';
 
 //Creation de variable tampon pour stocker les filtres actifs, les mettre à jour et déclencher ou non le filtrage global des events
 let listBlog: BlogType[] = [];
@@ -27,7 +26,10 @@ const SearchBlog = () => {
   const [activeFilters, setActiveFilters] = useState<string[]>([]);
   const [dateFilters, setDateFilters] = useState<string>('');
   const [searchFilters, setSearchFilters] = useState<string>('');
-  const [pictures, setPictures] = useState<string>();
+  const [zIndex, setZIndex] = useState(10);
+  const [showing, setShowing] = useState(false);
+
+  // const [pictures, setPictures] = useState<string>();
 
   useEffect(() => {
     const getBlog = async () => {
@@ -65,6 +67,27 @@ const SearchBlog = () => {
       }
     };
   };*/
+  //////////////////////////////////////////////////////Galerie//////////////////////////////////////////////////
+  // const handleClickGalery = (e: React.MouseEvent<HTMLDivElement>) => {
+  //   e.preventDefault();
+  //   const isShowing = e.currentTarget.classList.contains('show');
+  //   if (showing) {
+  //     setShowing(false);
+  //     if (isShowing) {
+  //       e.currentTarget.classList.remove('show');
+  //     } else {
+  //       e.currentTarget.classList.add('show');
+  //       e.currentTarget.style.zIndex = `${zIndex}`;
+  //       setZIndex(zIndex + 1);
+  //     }
+  //   } else {
+  //     setShowing(true);
+  //     e.currentTarget.classList.add('show');
+  //     e.currentTarget.style.zIndex = `
+  //       ${zIndex}`;
+  //     setZIndex(zIndex + 1);
+  //   }
+  // };
 
   ////////////////////////////////////////////////////HANDLEFILTERS///////////////////////////////////////////////////////////////////////////////////
 
@@ -166,15 +189,15 @@ const SearchBlog = () => {
   // const image_url = '../../public/assets/montagnerech.jpg';
 
   return (
-    <Container className='rechercheContenair'>
+    <div className='rechercheContenair'>
       <div className='bandeauTitreR'>
-        <h1>Rechercher un événement</h1>
+        <h1>Rechercher un article</h1>
       </div>
       <img className='imageR' src='assets/fleuve.jpg' alt='shaolin'></img>
       <div className='separation'></div>
       <div className='groupInput'>
         <Row className='rowR mb-3'>
-          <Form.Group as={Col}>
+          <Form.Group as={Col} md>
             <FloatingLabel label='Titre' className='mb-3'>
               <Form.Control
                 type='text'
@@ -186,7 +209,7 @@ const SearchBlog = () => {
               />
             </FloatingLabel>
           </Form.Group>
-          <Form.Group as={Col}>
+          <Form.Group as={Col} md>
             <FloatingLabel label='Date' className='mb-3'>
               {' '}
               <Form.Control
@@ -216,29 +239,41 @@ const SearchBlog = () => {
         </ul>
       </div>
 
-      <h2 className='resultats center mb-4'>Articles</h2>
-      <div className='container'>
-        {blog.map(({ id, title, date, picture }) => (
-          <Card style={{ width: '25rem' }} key={id}>
-            {picture ? (
-              <Card.Img
-                variant='top'
-                src={`http://localhost:8080/api/blog/${picture}`}
-              />
-            ) : (
-              <p>Pas d'image</p>
-            )}
-            <Card.Body>
-              <Card.Title>{title}</Card.Title>
-              <Card.Text>
-                Decouvrez l'article, cliquez sur le lien ci dessous
-              </Card.Text>
-              <Card.Text>Edité le : {date}</Card.Text>
-            </Card.Body>
-          </Card>
-        ))}
+      <div style={{ margin: '3rem' }}>
+        <h2 className='resultats center mb-4'>Articles</h2>
+        <Row>
+          {blog.map(({ id, title, date, picture }) => (
+            <Col md={4} key={id} className='mb-4'>
+              <Card style={{ height: '100%' }}>
+                {picture ? (
+                  <Card.Img
+                    variant='top'
+                    src={`http://localhost:8080/api/blog/${picture}`}
+                    style={{ objectFit: 'cover', height: '200px' }}
+                  />
+                ) : (
+                  <Card.Img
+                    src='assets/Ellipse.png'
+                    alt='aigle'
+                    style={{ objectFit: 'cover', height: '200px' }}
+                  />
+                )}
+                <Card.Body>
+                  <Card.Title>{title}</Card.Title>
+                  <Card.Text>
+                    Decouvrez l'article, cliquez sur le lien ci dessous
+                  </Card.Text>
+                  <Card.Text>Edité le : {date}</Card.Text>
+                </Card.Body>
+                <Card.Footer className='d-flex justify-content-center'>
+                  <button className='custom-btn btn-9'>Lire</button>
+                </Card.Footer>
+              </Card>
+            </Col>
+          ))}
+        </Row>
       </div>
-    </Container>
+    </div>
   );
 };
 

@@ -12,14 +12,18 @@
 
 .bandeauTitreO {
   width: 100%;
-  height: 25vh;
+  height: 20vh;
   background-color: #242269;
   color: white;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  padding-left: 1.3rem;
 }
 h2 {
   color: white;
   font-size: 90px;
-  padding: 100px 0 0 10vw;
+  /* padding: 100px 0 0 10vw; */
   position: relative;
 }
 @media (min-width: 720px) {
@@ -37,7 +41,7 @@ h2 {
 
   .bandeauTitreO {
     width: 100%;
-    height: 30vh;
+    height: 20vh;
     background-color: #242269;
     color: white;
     margin-bottom: 20pxpx;

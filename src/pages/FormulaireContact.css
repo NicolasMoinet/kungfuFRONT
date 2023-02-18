@@ -1,6 +1,6 @@
 .bandeauFC {
   background: #242269 !important;
-  height: 45vh;
+  height: 20vh;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -13,7 +13,6 @@
   color: rgb(255, 255, 255);
   font-size: 40px;
   text-align: center;
-  padding-left: 60px;
 }
 
 .containerFC {
@@ -28,7 +27,7 @@
   background-color: #fcd146;
   color: black;
   border: none;
-  margin-left: 1250px;
+  /* margin-left: 1250px; */
 }
 
 .button-returnFC:hover,
@@ -40,16 +39,20 @@
 .boxiconFC {
   width: 20%;
   font-size: 3em;
-  margin-left: 1350px;
+  display: block;
+  margin: 0 auto;
+}
+.ContactForm {
+  width: 100%;
 }
 
-@media (max-width: 600px) {
+@media (min-width: 600px) {
   .bandeauFC {
     background: #242269;
-    height: 150px;
+    /* height: 150px; */
     width: 100%;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
   }
 

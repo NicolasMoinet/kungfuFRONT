@@ -17,7 +17,6 @@ import { isValid } from '../models/form-validate/validation';
 import { errorInfo } from '../models/form-validate/errorMessage';
 import { useEvents } from '../context/EventsContext';
 import Button1 from '../components/Button1';
-import Button0 from '../components/Button0';
 
 const Organiser = () => {
   const navigate = useNavigate();
