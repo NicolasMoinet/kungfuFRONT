@@ -144,7 +144,7 @@ const Inscription = () => {
                 />
               </FloatingLabel>
 
-              <Button className='button-signup mb-3' type='submit'>
+              <Button className='custom-btn btn-9' type='submit'>
                 Envoyer
               </Button>
               <div>

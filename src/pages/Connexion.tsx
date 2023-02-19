@@ -109,7 +109,7 @@ const Connexion = () => {
             <Link to='/password/recover'>Mot de passe oublié ?</Link>
           </Form.Text>
         </FloatingLabel>
-        <Button className='button-signin mb-3' type='submit'>
+        <Button className='custom-btn btn-9' type='submit'>
           Envoyer
         </Button>
         <div>

@@ -7,13 +7,13 @@ const Header = () => {
     <div className='headerLP'>
       <div className='buttonContainer'>
         <Link to={'/connexion'}>
-          <Button className='button-Sign-Log' type='submit'>
+          <Button className='custom-btn btn-9' type='submit'>
             Connexion
           </Button>
         </Link>
 
         <Link to={'/inscription'}>
-          <Button className='button-Sign-Log' type='submit'>
+          <Button className='custom-btn btn-9' type='submit'>
             Inscription
           </Button>
         </Link>

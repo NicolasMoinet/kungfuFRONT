@@ -78,14 +78,14 @@ const ThumbnailEvent = ({ eventType, events }: ThumbnailEventProps) => {
                       <Card.Img
                         src={`http://localhost:8080/api/events/${event?.picture}`} // Affiche la photo de l'orga si elle existe
                         alt='panda avatar'
-                        style={{ objectFit: 'cover', height: '200px' }}
+                        style={{ objectFit: 'cover', height: '250px' }}
                         // roundedCircle
                       />
                     ) : (
                       <Card.Img
-                        src='assets/Ellipse.png'
+                        src='/assets/Ellipse.png'
                         alt='aigle'
-                        style={{ objectFit: 'cover', height: '200px' }}
+                        style={{ objectFit: 'cover', height: '250px' }}
                       />
                     )}
                   </div>

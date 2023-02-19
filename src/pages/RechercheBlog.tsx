@@ -26,8 +26,7 @@ const SearchBlog = () => {
   const [activeFilters, setActiveFilters] = useState<string[]>([]);
   const [dateFilters, setDateFilters] = useState<string>('');
   const [searchFilters, setSearchFilters] = useState<string>('');
-  const [zIndex, setZIndex] = useState(10);
-  const [showing, setShowing] = useState(false);
+  
 
   // const [pictures, setPictures] = useState<string>();
 

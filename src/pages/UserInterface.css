@@ -1,5 +1,5 @@
 .bandeau-user {
-  background: #242269 !important;
+  background: #af88f4 !important;
   height: 40vh;
   width: 100%;
   display: flex;
@@ -54,11 +54,10 @@
 @media (min-width: 768px) {
   .boxiconLP {
     padding-top: 30px;
-    
-      }
+  }
 
   .bandeau-user {
-    background: #242269 !important;
+    background: #af88f4 !important;
     height: 35vh;
     width: 100%;
     display: flex;

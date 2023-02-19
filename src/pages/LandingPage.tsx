@@ -6,10 +6,33 @@ import Footer from '../components/Footer';
 import { useAuth } from '../context/AuthContext';
 import Button1 from '../components/Button1';
 import { Card, Col, Row } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+import { BlogType } from '../models/interface/Blog';
+import axios, { AxiosResponse } from 'axios';
+
+let listBlog: BlogType[] = [];
 
 const LandingPage = () => {
   const { currentUser } = useAuth();
   console.log('current userrrrrrr', currentUser);
+  const [blog, setBlog] = useState<BlogType[]>([...listBlog]);
+  useEffect(() => {
+    const getBlog = async () => {
+      try {
+        const response: AxiosResponse<BlogType[]> = await axios.get(
+          `http://localhost:8080/api/blog`
+        );
+
+        listBlog = response.data;
+
+        setBlog(listBlog);
+      } catch (error) {
+        console.log('Recherche - fetch articles - Error : ', error);
+      }
+    };
+    getBlog();
+  }, []);
+
   return (
     <>
       <div className='landing-page'>
@@ -65,14 +88,17 @@ const LandingPage = () => {
           <div className='cubeLP'></div>
         </div>
       </div>
+      <div>
+        <p className='titrepratiques'> Decouvrez nos pratiques ! :</p>
+      </div>
       <section className='prezzz2'>
         <Row className='justify-content-center'>
           <Col md={4} className='mb-4'>
             <Card style={{ height: '100%' }}>
               <Card.Img
                 variant='top'
-                src={`/assets/dragon.png`}
-                style={{ objectFit: 'cover', height: '200px' }}
+                src='/assets/jackypudao.jpg'
+                style={{ objectFit: 'cover', height: '250px' }}
               />
 
               <Card.Body>
@@ -90,8 +116,8 @@ const LandingPage = () => {
             <Card style={{ height: '100%' }}>
               <Card.Img
                 variant='top'
-                src={`/public/assets/dragon`}
-                style={{ objectFit: 'cover', height: '200px' }}
+                src='/assets/sanda.jpg'
+                style={{ objectFit: 'cover', height: '250px' }}
               />
 
               <Card.Body>
@@ -109,8 +135,8 @@ const LandingPage = () => {
             <Card style={{ height: '100%' }}>
               <Card.Img
                 variant='top'
-                src={`/public/assets/dragon`}
-                style={{ objectFit: 'cover', height: '200px' }}
+                src='/assets/lutte.jpeg'
+                style={{ objectFit: 'cover', height: '250px' }}
               />
 
               <Card.Body>
@@ -125,6 +151,42 @@ const LandingPage = () => {
             </Card>
           </Col>
         </Row>
+      </section>
+      <p className='titrepratiques'> Decouvrez notre blog ! :</p>
+      <section className='prezzz3'>
+        <div style={{ margin: '3rem' }}>
+          <Row>
+            {blog.slice(0, 3).map(({ id, title, date, picture }) => (
+              <Col md={4} key={id} className='mb-4'>
+                <Card style={{ height: '100%' }}>
+                  {picture ? (
+                    <Card.Img
+                      variant='top'
+                      src={`http://localhost:8080/api/blog/${picture}`}
+                      style={{ objectFit: 'cover', height: '200px' }}
+                    />
+                  ) : (
+                    <Card.Img
+                      src='/assets/Ellipse.png'
+                      alt='aigle'
+                      style={{ objectFit: 'cover', height: '200px' }}
+                    />
+                  )}
+                  <Card.Body>
+                    <Card.Title>{title}</Card.Title>
+                    <Card.Text>
+                      Decouvrez l'article, cliquez sur le lien ci dessous
+                    </Card.Text>
+                    <Card.Text>Edité le : {date}</Card.Text>
+                  </Card.Body>
+                  <Card.Footer className='d-flex justify-content-center'>
+                    <button className='custom-btn btn-9'>Lire</button>
+                  </Card.Footer>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </div>
       </section>
       <div>
         <img
