@@ -152,7 +152,7 @@ const Search = () => {
       <div className='bandeauTitreR'>
         <h1>Rechercher un événement</h1>
       </div>
-      <img className='imageR' src='assets/fleuve.jpg' alt='shaolin'></img>
+      <img className='imageR' src='assets/image1.jpg' alt='shaolin'></img>
       <div className='separation'></div>
       <div className='groupInput'>
         <Row className='rowR mb-3'>

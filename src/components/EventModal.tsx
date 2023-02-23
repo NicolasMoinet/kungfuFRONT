@@ -122,7 +122,7 @@ const EventModal = ({
           updatedSuscribeEvents
         );
 
-        setSuccessMessage('Participation validée. Bravo !');
+        setSuccessMessage('Participation Validée. Bravo !');
         setTimeout(() => {
           setSuccessMessage('');
         }, 3000);

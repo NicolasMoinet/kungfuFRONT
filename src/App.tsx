@@ -27,6 +27,7 @@ import BlogProvider from './context/BlogContext';
 import BlogOrganiser from './pages/BlogOrganiser';
 import Search from './pages/Recherche';
 import SearchBlog from './pages/RechercheBlog';
+import Article from './pages/Article';
 
 export const NavLayout = () => {
   const { currentUser } = useAuth();
@@ -86,6 +87,7 @@ const App = () => {
                         path='/organiserBlog'
                         element={<BlogOrganiser />}
                       />
+                      <Route path='/article/:id' element={<Article />} />
                       <Route path='/rechercheBlog' element={<SearchBlog />} />
                     </Route>
                   </Route>

@@ -102,7 +102,7 @@ const BlogOrganiser = () => {
         // })
         .then((response) => {
           let blogData = response.data;
-          console.log('organiser, blogData evenement crée : ', blogData);
+          console.log('organiser, blogData article crée : ', blogData);
 
           let updatedBlogList = [...blog];
 
@@ -142,8 +142,13 @@ const BlogOrganiser = () => {
   return (
     <>
       <div className='bandeauTitreBO'>
-        <h2>Créer son Article </h2>
+        <h1>Créer son Article </h1>
       </div>
+      <img
+        className='imageR'
+        src='assets/calligraphie.jpg'
+        alt='calligraphie'
+      ></img>
       <Container className='containerBO'>
         <form onSubmit={handleSubmitForm}>
           <Row>

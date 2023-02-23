@@ -1,5 +1,5 @@
 .bandeau-user {
-  background: #af88f4 !important;
+  background: #aa7bc3 !important;
   height: 40vh;
   width: 100%;
   display: flex;
@@ -17,6 +17,7 @@
   margin-left: 0px;
   font-size: 1.8rem;
   color: white;
+  text-align: center;
 }
 .p {
   font-size: 1rem;
@@ -38,12 +39,9 @@
   /* position: absolute;
   width: 13px; */
 
-  border: none;
-  /* background-color: var(--background-primary); */
   font-size: 1em;
   bottom: 1.2px;
   left: 2.8rem;
-  top: 1rem;
 }
 /* .button-UI-edit-profil:hover,
 .button-UI-edit-profil:active,
@@ -52,16 +50,24 @@
 } */
 
 @media (min-width: 768px) {
-  .boxiconLP {
-    padding-top: 30px;
+  .edit-profil-text {
+    padding: 15px;
+    margin: 15px;
+    color: black;
+  }
+  .bonjour-user {
+    margin-left: 0px;
+    font-size: 1.8rem;
+    color: white;
+    text-align: center;
   }
 
   .bandeau-user {
-    background: #af88f4 !important;
-    height: 35vh;
+    background: #aa7bc3 !important;
+    height: 20vh;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     /* padding-left: 15px; */
     /* margin-bottom: 20px; */
@@ -77,15 +83,5 @@
   }
   .ProchainEvenementOrganisé {
     font-size: 1.3em;
-  }
-  .button-UI-edit-profil {
-    position: absolute;
-    width: 25px;
-    border: none;
-    /* background-color: var(--background-primary); */
-    font-size: 2.3em;
-    top: 13.3rem;
-    left: 10.3rem;
-    margin: 5px;
   }
 }

@@ -1,8 +1,5 @@
 import { Link } from 'react-router-dom';
-import {
-  
-  faMarker,
-} from '@fortawesome/free-solid-svg-icons';
+import { faMarker } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import NavBarLoginIn from '../components/NavBarLoginIn';
 import ThumbnailEvent from '../components/ThumbnailEvent';
@@ -104,26 +101,34 @@ const UserInterface = () => {
         <NavBarLoginIn />
       </div>
       <section className='bandeau-user'>
-        <Link to='/user/profile'>
-          <div className='button-UI-edit-profil'>
-            <FontAwesomeIcon
-              icon={faMarker}
-              color={'white'}
-              className='iconNB '
-            />
-          </div>
-        </Link>
+        <div>
+          <div className='bonjour-user'>
+            Bonjour {currentUser?.name},
+            <p>
+              {nombreEventInscritAVenir < 1
+                ? `Vous n'êtes actuellement inscrit à aucun événement, n'hesitez pas !  `
+                : `Vous êtes actuellement inscrit à ${nombreEventInscritAVenir} évènement(s) `}
 
-        <div className='bonjour-user'>
-          Bonjour {currentUser?.name},
-          <p>
-            {nombreEventInscritAVenir < 1
-              ? `Vous n'êtes actuellement inscrit à aucun événement, n'hesitez pas !  `
-              : `Vous êtes actuellement inscrit à ${nombreEventInscritAVenir} évènement(s) `}
-          </p>
+              <Link to='/user/profile'>
+                <div className='button-UI-edit-profil'>
+                  <FontAwesomeIcon
+                    icon={faMarker}
+                    color={'white'}
+                    className='iconNB '
+                  />
+                </div>
+              </Link>
+            </p>
+          </div>
         </div>
-        <div className='photo-bandeau-user'></div>
       </section>
+      <div>
+        <img
+          className='imageR'
+          src='/assets/street.jpg'
+          alt='calligraphie'
+        ></img>
+      </div>
       <section className='caroussel'>
         <div className='ProcheDeChezVous'> Évènement à venir :</div>
 

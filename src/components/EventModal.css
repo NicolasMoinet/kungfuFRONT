@@ -91,7 +91,7 @@ p {
 .event-description {
   /* margin-top: 10px; */
   padding: 1rem;
-  background: #af88f4;
+  background: #AA7BC3;
 }
 
 .modal-footer {
@@ -113,7 +113,7 @@ p {
 .modal-btn,
 .modal-btn:active {
   font-size: 1.5em;
-  background-color: #af88f4 !important;
+  background-color: #AA7BC3 !important;
   border: none;
 }
 

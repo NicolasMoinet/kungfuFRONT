@@ -170,8 +170,13 @@ const Organiser = () => {
   return (
     <>
       <div className='bandeauTitreO'>
-        <h2>Créer votre évènement </h2>
+        <h1>Créer votre évènement </h1>
       </div>
+      <img
+        className='imageR'
+        src='assets/calligraphie.jpg'
+        alt='calligraphie'
+      ></img>
       <Container className='container'>
         <Row>
           <Col>

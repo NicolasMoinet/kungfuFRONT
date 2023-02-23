@@ -1,5 +1,5 @@
 .bandeauFC {
-  background: #af88f4 !important;
+  background: #AA7BC3!important;
   height: 20vh;
   width: 100%;
   display: flex;
@@ -48,7 +48,7 @@
 
 @media (min-width: 600px) {
   .bandeauFC {
-    background: #af88f4;
+    background: #AA7BC3;
     /* height: 150px; */
     width: 100%;
     display: flex;

@@ -26,7 +26,6 @@ const SearchBlog = () => {
   const [activeFilters, setActiveFilters] = useState<string[]>([]);
   const [dateFilters, setDateFilters] = useState<string>('');
   const [searchFilters, setSearchFilters] = useState<string>('');
-  
 
   // const [pictures, setPictures] = useState<string>();
 
@@ -193,7 +192,7 @@ const SearchBlog = () => {
         <h1>Rechercher un article</h1>
       </div>
       <img className='imageR' src='assets/fleuve.jpg' alt='shaolin'></img>
-      <div className='separation'></div>
+      {/* <div className='separation'></div> */}
       <div className='groupInput'>
         <Row className='rowR mb-3'>
           <Form.Group as={Col} md>

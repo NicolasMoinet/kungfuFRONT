@@ -16,6 +16,16 @@ h6 {
   padding-left: 50px;
   position: relative;
 }
+/* .hide-on-mobile {
+  display: none;
+} */
+.parallax {
+  background-size: cover;
+  background-position: center;
+  background-image: none;
+  height: 100vh;
+}
+
 .opponent {
   color: white;
   font-size: 20px;
@@ -31,7 +41,7 @@ h6 {
   justify-content: space-between;
   align-items: center;
   /* padding-left: 15px; */
-  /* margin-bottom: 20px; */
+  margin-bottom: 30px;
 }
 
 .comment-footer {
@@ -53,13 +63,39 @@ h6 {
   text-align: center;
   margin-bottom: 0;
 }
-
+.titrepratiques {
+  font-size: x-large;
+  font-weight: bolder;
+  color: white;
+  padding-left: 15px;
+  margin-top: 140px;
+  text-align: center;
+}
 .lireAM {
   font-size: small;
 }
 .prezzz2 {
   margin-top: 140px;
   margin-bottom: 100px;
+}
+.separation {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 30px;
+}
+
+.separation img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  /* float: right; */
+  margin-left: 20px;
+  margin-right: 80px;
 }
 .contactLP {
   height: 30vh;
@@ -140,14 +176,14 @@ h6 {
     flex-direction: row;
 
     height: 40vh;
-    margin-top: 150px;
-    margin-bottom: 180px;
+    margin-top: 250px;
+    margin-bottom: 260px;
     z-index: 300;
   }
   .prezzz2 {
     margin-top: 0px;
     background-color: #ede9f4;
-    height: 65vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -156,7 +192,7 @@ h6 {
   .prezzz3 {
     z-index: 3;
     /* margin-top: 60px; */
-    margin-bottom: 60px;
+    margin-bottom: 300px;
     background-color: #ede9f4;
     height: 80vh;
     display: flex;
@@ -177,7 +213,7 @@ h6 {
   .contactLP {
     height: 60vh;
     width: 65vh;
-    background-color: #af88f4;
+    background-color: #aa7bc3;
     background-image: url('/public/assets/dragon.png');
     background-size: cover;
     background-position: center;
@@ -201,7 +237,7 @@ h6 {
     padding: 30px;
     padding-left: 70px;
     padding-bottom: 0px;
-    width: 400px;
+    width: 500px;
   }
   .Titre {
     position: relative;
@@ -245,7 +281,7 @@ h6 {
   }
 
   .section-slogan {
-    background: #af88f4 !important;
+    background: #aa7bc3 !important;
     height: auto;
     width: 100%;
     display: flex;
@@ -274,7 +310,177 @@ h6 {
   }
   .titrepratiques {
     font-size: x-large;
+    font-weight: bolder;
+    color: white;
     padding-left: 15px;
+    margin-top: 140px;
+  }
+  .separation {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+
     margin-top: 60px;
+    margin-bottom: 60px;
+    padding: 30px;
+  }
+
+  .separation img {
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+    float: right;
+    margin-left: 20px;
+    margin-right: 80px;
+  }
+}
+@media (min-width: 1220px) {
+  .landing-page {
+    height: 100%;
+  }
+  h6 {
+    margin-top: 15px;
+  }
+  .titre {
+    position: relative;
+    z-index: 500;
+    margin-top: 60px;
+  }
+  .xy {
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    padding-left: 50px;
+    position: relative;
+  }
+  .parallax {
+    background-size: cover;
+    background-position: center;
+
+    height: 100vh;
+  }
+
+  .opponent {
+    color: white;
+    font-size: 20px;
+    padding-left: 5.1rem;
+    margin: 7px 0;
+    margin-bottom: 15px;
+  }
+  .section-slogan {
+    background: #af88f4 !important;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    /* padding-left: 15px; */
+    margin-bottom: 30px;
+  }
+
+  .comment-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .photo-bandeau {
+    display: flex;
+    align-items: baseline;
+  }
+
+  .titleLP {
+    text-align: center;
+    margin-top: 0px;
+  }
+  .textLP {
+    font-size: small;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .titrepratiques {
+    font-size: x-large;
+    font-weight: bolder;
+    color: white;
+    padding-left: 15px;
+    margin-top: 140px;
+    text-align: center;
+  }
+  .lireAM {
+    font-size: small;
+  }
+  .prezzz2 {
+    margin-top: 140px;
+    margin-bottom: 100px;
+  }
+  .separation {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding: 30px;
+  }
+
+  .separation img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    /* float: right; */
+    margin-left: 20px;
+    margin-right: 80px;
+  }
+  .contactLP {
+    height: 30vh;
+    width: 80%;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: #af88f4;
+    /* position: relative;
+    right: 15vh;
+    bottom: 15vh;
+    margin-left: 40vh; */
+    z-index: 1030;
+    border-radius: 15px;
+  }
+  .contactLP:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.24);
+    transition: 0.4s;
+  }
+  .contactTitre {
+    padding: 10px !important;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    margin: 0;
+  }
+  .prez {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 40vh;
+    margin-bottom: 5px;
+    z-index: 300;
+  }
+  .blabla {
+    margin-top: 15px;
+    text-align: justify;
+  }
+  .aigle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    /* margin-right: 2rem; */
+    margin-bottom: 15px;
   }
 }

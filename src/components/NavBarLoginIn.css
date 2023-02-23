@@ -5,12 +5,12 @@
   font-size: small;
   display: none;
   z-index: 1002;
-  background-color: #af88f4;
+  background-color: #AA7BC3;
 }
 
 @media (min-width: 768px) {
   .navbar-login-in {
     display: none;
-    background-color: #af88f4;
+    background-color: #AA7BC3;
   }
 }
