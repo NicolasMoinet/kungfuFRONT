@@ -10,7 +10,8 @@ import { EventType } from '../models/interface/Event';
 import Image from 'react-bootstrap/Image';
 import { useEvents } from '../context/EventsContext';
 import useAxiosPrivate from '../api/useAxiosPrivate';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 //on déclare les variables dont on va avoir besoin pour les initialiser
 //
 let eventsListUserParticipant: EventType[] = [];
@@ -38,6 +39,15 @@ const UserInterface = () => {
         console.log('UI event participant', eventsListUserParticipant);
       });
   }, [events]);
+  useEffect(() => {
+    AOS.init({
+      duration: 3000,
+      offset: 50,
+      easing: 'ease-in-out',
+      // delay: 200,
+      once: false,
+    });
+  }, []);
 
   const filterNextEventsParticipant = () => {
     let resultUserNextEvent: EventType[] = [...listEvents];
@@ -102,7 +112,12 @@ const UserInterface = () => {
       </div>
       <section className='bandeau-user'>
         <div>
-          <div className='bonjour-user'>
+          <div
+            className='bonjour-user'
+            data-aos='fade-up'
+            data-aos-duration='1000'
+            // data-aos-delay='10'
+          >
             Bonjour {currentUser?.name},
             <p>
               {nombreEventInscritAVenir < 1
@@ -122,11 +137,13 @@ const UserInterface = () => {
           </div>
         </div>
       </section>
-      <div>
+      <div className='imageconteneur'>
         <img
           className='imageR'
           src='/assets/street.jpg'
           alt='calligraphie'
+          data-aos='zoom-out'
+          data-aos-duration='60000'
         ></img>
       </div>
       <section className='caroussel'>

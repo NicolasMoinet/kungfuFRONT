@@ -17,6 +17,8 @@ import { isValid } from '../models/form-validate/validation';
 import { errorInfo } from '../models/form-validate/errorMessage';
 import { useEvents } from '../context/EventsContext';
 import Button1 from '../components/Button1';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Organiser = () => {
   const navigate = useNavigate();
@@ -166,17 +168,32 @@ const Organiser = () => {
       }, 5000);
     }
   };
+  useEffect(() => {
+    AOS.init({
+      duration: 3000,
+      offset: 50,
+      easing: 'ease-in-out',
+      // delay: 200,
+      once: false,
+    });
+  }, []);
 
   return (
     <>
       <div className='bandeauTitreO'>
+        <div className='titreee' data-aos='fade-right' data-aos-duration='1000'>
         <h1>Créer votre évènement </h1>
+        </div>
       </div>
-      <img
-        className='imageR'
-        src='assets/calligraphie.jpg'
-        alt='calligraphie'
-      ></img>
+      <div className='imageconteneur'>
+        <img
+          className='imageR'
+          src='assets/calligraphie.jpg'
+          alt='calligraphie'
+          data-aos='zoom-out'
+          data-aos-duration='60000'
+        ></img>
+      </div>
       <Container className='container'>
         <Row>
           <Col>

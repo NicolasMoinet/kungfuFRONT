@@ -24,7 +24,7 @@ function Article() {
       }
     };
     getBlog();
-  }, [blog]);
+  }, [id]);
 
   return (
     <div>

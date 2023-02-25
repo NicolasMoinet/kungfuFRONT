@@ -1,10 +1,13 @@
 import { faHouse, faLeaf } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button, OverlayTrigger, Popover } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Button1 from '../components/Button1';
 import './FormulaireContact.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const FormulaireContact = () => {
   // Définition du composant popover qui va s'afficher quand on essaie de contacter un organisateur
   const popover = (
@@ -15,12 +18,32 @@ const FormulaireContact = () => {
       </Popover.Body>
     </Popover>
   );
+  useEffect(() => {
+    AOS.init({
+      duration: 3000,
+      offset: 50,
+      easing: 'ease-in-out',
+      // delay: 200,
+      once: false,
+    });
+  }, []);
   return (
     <div className='ContactForm'>
       <section className='bandeauFC'>
         {/* <img className='bandeauLP' src='/assets/BeandeauACC.svg' alt='fond' />; */}
-        <h2 className='titleFC'>Formulaire Contact </h2>
+        <div className='titreee' data-aos='fade-right' data-aos-duration='1000'>
+          <h1>Contact</h1>
+        </div>
       </section>
+      <div className='imageconteneur'>
+        <img
+          className='imageR'
+          src='assets/erable2.jpg'
+          alt='calligraphie'
+          data-aos='zoom-out'
+          data-aos-duration='6000'
+        ></img>
+      </div>
       <div className='containerFC'>
         <div className='boxiconFC'>
           <Link to={'/'} className='iconFC'>

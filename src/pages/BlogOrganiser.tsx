@@ -16,7 +16,8 @@ import './BlogOrganiser.css';
 import { isValid } from '../models/form-validate/validation';
 import { errorInfo } from '../models/form-validate/errorMessage';
 import { useBlog } from '../context/BlogContext';
-import Button1 from '../components/Button1';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const BlogOrganiser = () => {
   const navigate = useNavigate();
@@ -138,17 +139,32 @@ const BlogOrganiser = () => {
       }, 5000);
     }
   };
+  useEffect(() => {
+    AOS.init({
+      duration: 3000,
+      offset: 50,
+      easing: 'ease-in-out',
+      // delay: 200,
+      once: false,
+    });
+  }, []);
 
   return (
     <>
       <div className='bandeauTitreBO'>
-        <h1>Créer son Article </h1>
+        <div className='titreee' data-aos='fade-right' data-aos-duration='1000'>
+          <h1>Créer son Article </h1>
+        </div>
       </div>
-      <img
-        className='imageR'
-        src='assets/calligraphie.jpg'
-        alt='calligraphie'
-      ></img>
+      <div className='imageconteneur'>
+        <img
+          className='imageR'
+          src='assets/calligraphie.jpg'
+          alt='calligraphie'
+          data-aos='zoom-out'
+          data-aos-duration='6000'
+        ></img>
+      </div>
       <Container className='containerBO'>
         <form onSubmit={handleSubmitForm}>
           <Row>

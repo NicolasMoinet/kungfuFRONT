@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AxiosResponse } from 'axios';
 import { Alert, Button, OverlayTrigger, Popover } from 'react-bootstrap';
+import './EventModal.css';
 import Modal from 'react-bootstrap/Modal';
 import Image from 'react-bootstrap/Image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,7 +13,6 @@ import { EventType } from '../models/interface/Event';
 import { useAuth } from '../context/AuthContext';
 import useAxiosPrivate from '../api/useAxiosPrivate';
 import { useEvents } from '../context/EventsContext';
-import './EventModal.css';
 
 // Toutes les props sont passées par le parent ThumbnailEvent
 interface EventModalProps {

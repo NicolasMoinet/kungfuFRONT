@@ -43,11 +43,17 @@
   bottom: 1.2px;
   left: 2.8rem;
 }
+.imageR {
+  overflow: hidden;
+}
 /* .button-UI-edit-profil:hover,
 .button-UI-edit-profil:active,
 .button-UI-edit-profil:focus {
   background-color: var(--background-yellow) !important;
 } */
+.imageconteneur {
+  overflow: hidden;
+}
 
 @media (min-width: 768px) {
   .edit-profil-text {
@@ -69,6 +75,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 500;
     /* padding-left: 15px; */
     /* margin-bottom: 20px; */
   }

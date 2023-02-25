@@ -15,6 +15,8 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 import './Recherche.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 //Creation de variable tampon pour stocker les filtres actifs, les mettre à jour et déclencher ou non le filtrage global des events
 let listBlog: BlogType[] = [];
@@ -44,6 +46,15 @@ const SearchBlog = () => {
       }
     };
     getBlog();
+  }, []);
+  useEffect(() => {
+    AOS.init({
+      duration: 3000,
+      offset: 50,
+      easing: 'ease-in-out',
+      // delay: 200,
+      once: false,
+    });
   }, []);
 
   /*const getImage = async (imageName: string) => {
@@ -189,9 +200,19 @@ const SearchBlog = () => {
   return (
     <div className='rechercheContenair'>
       <div className='bandeauTitreR'>
-        <h1>Rechercher un article</h1>
+        <div className='titreee' data-aos='fade-right' data-aos-duration='1000'>
+          <h1>Rechercher un article</h1>
+        </div>
       </div>
-      <img className='imageR' src='assets/fleuve.jpg' alt='shaolin'></img>
+      <div className='imageconteneur'>
+        <img
+          className='imageR'
+          src='assets/fleuve.jpg'
+          alt='shaolin'
+          data-aos='zoom-out'
+          data-aos-duration='6000'
+        ></img>
+      </div>
       {/* <div className='separation'></div> */}
       <div className='groupInput'>
         <Row className='rowR mb-3'>

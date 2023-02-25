@@ -10,6 +10,10 @@ import { useEffect, useState } from 'react';
 import { BlogType } from '../models/interface/Blog';
 import axios, { AxiosResponse } from 'axios';
 import { Parallax } from 'react-parallax';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { AosOptions } from 'aos';
+// import ReactAOS from 'react-aos'
 
 let listBlog: BlogType[] = [];
 
@@ -38,6 +42,16 @@ const LandingPage = () => {
     getBlog();
   }, []);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 3000,
+      offset: 50,
+      easing: 'ease-in-out',
+      // delay: 200,
+      once: false,
+    });
+  }, []);
+
   return (
     <>
       <div className='landing-page'>
@@ -49,24 +63,66 @@ const LandingPage = () => {
               className='Fond-head '
               src='assets/BandeauACC.svg'
               alt='Montagne'
+              data-aos='zoom-out'
+              data-aos-easing='linear'
+              data-aos-duration='1500'
             />
             <div className='Bandeau1'>
-              <h1 className='xy'>Xiong Ying Wushu Guan</h1>
+              <h1
+                className='xy'
+                data-aos='fade-right'
+                data-aos-offset='300'
+                data-aos-easing='ease-in-sine'
+              >
+                Xiong Ying Wushu Guan
+              </h1>
               {/* <p className='opponent'> ONLY ONE OPPONENT : YOURSELF </p> */}
             </div>
           </div>
           <div>
-            <img className='aigle' src='assets/Ellipse.png' alt='aigle' />
+            {/* <div data-aos="zoom-out"> */}
+            <img
+              className='aigle'
+              src='assets/Ellipse.png'
+              alt='aigle'
+              data-aos='fade-down-left'
+              // data-aos-anchor-placement='top-bottom'
+            />
+            {/* </div> */}
           </div>
         </section>
+
         <div className='prez'>
-          <div className='minititre'>
-            <div className='prezTitre'>
+          <div
+            className='minititre'
+            // data-aos='slide-right'
+            // data-aos-duration='500'
+            // data-aos-easing='ease-in-out'
+            // data-aos-delay='200'
+          >
+            <div
+              className='prezTitre'
+              data-aos='slide-right'
+              data-aos-duration='400'
+              data-aos-delay='50'
+            >
               <h6 className='mb-0'>Bienvenue sur le site de l'association</h6>
             </div>
             <div>
-              <h3 className='ecole mb-15'>L'école de l'aigle bienveillant</h3>
-              <p className='blabla'>
+              <h3
+                className='ecole mb-15'
+                data-aos='slide-right'
+                data-aos-duration='400'
+                data-aos-delay='150'
+              >
+                L'école de l'aigle bienveillant
+              </h3>
+              <p
+                className='blabla'
+                data-aos='slide-right'
+                data-aos-duration='400'
+                data-aos-delay='300'
+              >
                 Notre association est issue d'une volonté de nous retrouver
                 autour de notre passion commune le Kung-fu Wushu. Fort de 30 ans
                 d'experience, Jacky Juste (6eme Duan) vous accompagnera dans
@@ -75,7 +131,14 @@ const LandingPage = () => {
             </div>
           </div>
 
-          <div className='contactLP'>
+          <div
+            className='contactLP'
+            data-aos='flip-left'
+            data-aos-easing='ease-out-cubic'
+            data-aos-duration='2000'
+            data-aos-delay='310'
+          >
+            <img src='/assets/dragon.png' alt='Dragon' />
             <h2 className='contactTitre '>Contact</h2>
 
             <Link to={'/formulairecontact'}>
@@ -105,7 +168,12 @@ const LandingPage = () => {
         </div>
         <section className='prezzz2'>
           <Row className='justify-content-center'>
-            <Col md={4} className='mb-4'>
+            <Col
+              md={4}
+              className='mb-4'
+              data-aos='fade-up'
+              data-aos-duration='300'
+            >
               <Card style={{ height: '100%' }}>
                 <Card.Img
                   variant='top'
@@ -129,7 +197,13 @@ const LandingPage = () => {
                 </Card.Footer>
               </Card>
             </Col>
-            <Col md={4} className='mb-4'>
+            <Col
+              md={4}
+              className='mb-4'
+              data-aos='fade-up'
+              data-aos-duration='300'
+              data-aos-delay='100'
+            >
               <Card style={{ height: '100%' }}>
                 <Card.Img
                   variant='top'
@@ -153,7 +227,13 @@ const LandingPage = () => {
                 </Card.Footer>
               </Card>
             </Col>
-            <Col md={4} className='mb-4 px-4'>
+            <Col
+              md={4}
+              className='mb-4 px-4'
+              data-aos='fade-up'
+              data-aos-duration='300'
+              data-aos-delay='200'
+            >
               <Card style={{ height: '100%' }}>
                 <Card.Img
                   variant='top'
@@ -184,7 +264,14 @@ const LandingPage = () => {
           <div style={{ margin: '3rem' }}>
             <Row>
               {blog.slice(0, 3).map(({ id, title, date, picture }) => (
-                <Col md={4} key={id} className='mb-4'>
+                <Col
+                  md={4}
+                  key={id}
+                  className='mb-4'
+                  data-aos='fade-up'
+                  data-aos-duration='300'
+                  data-aos-delay='10'
+                >
                   <Card style={{ height: '100%' }}>
                     {picture ? (
                       <Card.Img
@@ -303,16 +390,20 @@ const LandingPage = () => {
             Rouge, les vendredis à 19h.
           </p>
         </div>
-        <div>
+        {/* <div>
           <img src='/assets/nicomini.png' alt='pose Kungfu' />
-        </div>
+        </div> */}
       </div>
       <div>
-        <img
-          className='montagne img-thumbmail'
-          src='assets/montagnerech.jpg'
-          alt='montagne'
-        />
+        <div className='imageconteneur'>
+          <img
+            className='montagne img-thumbmail'
+            src='assets/montagnerech.jpg'
+            alt='montagne'
+            data-aos='zoom-out'
+            data-aos-duration='6000'
+          />
+        </div>
       </div>
       <Footer />
     </>
