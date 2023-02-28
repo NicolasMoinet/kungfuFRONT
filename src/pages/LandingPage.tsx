@@ -45,9 +45,8 @@ const LandingPage = () => {
   useEffect(() => {
     AOS.init({
       duration: 3000,
-      offset: 50,
+      offset: 200,
       easing: 'ease-in-out',
-      // delay: 200,
       once: false,
     });
   }, []);
@@ -156,18 +155,20 @@ const LandingPage = () => {
           <div className='cubeLP'></div>
         </div>
       </div>
+
       <Parallax
         blur={{ min: 0, max: 0 }}
         bgImage='/assets/erable1.jpg'
         bgImageAlt='parallaxBamboo'
-        strength={600}
+        strength={800}
         className='hide-on-mobile'
+        // style={{ backgroundSize: '80% auto' }}
       >
         <div>
           <p className='titrepratiques'> Decouvrez nos pratiques ! </p>
         </div>
         <section className='prezzz2'>
-          <Row className='justify-content-center'>
+          <Row className='justify-content-center '>
             <Col
               md={4}
               className='mb-4'
@@ -229,7 +230,7 @@ const LandingPage = () => {
             </Col>
             <Col
               md={4}
-              className='mb-4 px-4'
+              className='mb-4 '
               data-aos='fade-up'
               data-aos-duration='300'
               data-aos-delay='200'

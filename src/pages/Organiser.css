@@ -13,7 +13,7 @@
 .bandeauTitreO {
   width: 100%;
   height: 20vh;
-  background-color: #aa7bc3;
+  background-color: #9a60af;
   color: white;
   display: flex;
   align-items: center;
@@ -42,7 +42,7 @@ h2 {
   .bandeauTitreO {
     width: 100%;
     height: 20vh;
-    background-color: #aa7bc3;
+    background-color: #9a60af;
     color: white;
     margin-bottom: 20pxpx;
   }

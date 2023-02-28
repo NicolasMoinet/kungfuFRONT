@@ -5,7 +5,7 @@
 .swiper-button-next,
 .swiper-button-prev {
   display: none;
-  color: #af88f4;
+  color: #9a60af;
 }
 
 .swiper-pagination {
@@ -13,7 +13,7 @@
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #af88f4;
+  background-color: #9a60af;
 }
 .imgThumbmail {
   border-radius: 30px;
@@ -79,7 +79,7 @@
 
 @media screen and (min-width: 768px) {
   .CardImg {
-    border-color: #AA7BC3;
+    border-color: #9a60af;
   }
   .custom-btn {
     z-index: 1000 !important;

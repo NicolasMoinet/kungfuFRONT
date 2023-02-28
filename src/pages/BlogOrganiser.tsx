@@ -159,7 +159,7 @@ const BlogOrganiser = () => {
       <div className='imageconteneur'>
         <img
           className='imageR'
-          src='assets/calligraphie.jpg'
+          src='/assets/calligraphie.jpg'
           alt='calligraphie'
           data-aos='zoom-out'
           data-aos-duration='6000'

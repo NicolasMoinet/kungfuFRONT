@@ -1,5 +1,5 @@
 .bandeau-user {
-  background: #aa7bc3 !important;
+  background: #9a60af !important;
   height: 40vh;
   width: 100%;
   display: flex;
@@ -69,7 +69,7 @@
   }
 
   .bandeau-user {
-    background: #aa7bc3 !important;
+    background: #9a60af !important;
     height: 20vh;
     width: 100%;
     display: flex;

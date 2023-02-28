@@ -1,5 +1,5 @@
 .groupInput {
-  background: linear-gradient(to bottom, #aa7bc3, #ffffff) !important;
+  background: linear-gradient(to bottom, #9a60af, #ffffff) !important;
   transition: all 0.3s ease;
   padding: 3rem;
   padding-top: 3rem;
@@ -8,7 +8,7 @@
 .bandeauTitreR {
   width: 100%;
   height: 20vh;
-  background-color: #af88f4;
+  background-color: #9a60af;
   color: white;
   display: flex;
   align-items: center;
@@ -113,7 +113,7 @@
   .bandeauTitreR {
     width: 100%;
     height: 20vh;
-    background-color: #aa7bc3;
+    background-color: #9a60af;
     color: white;
   }
 

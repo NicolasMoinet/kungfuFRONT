@@ -5,11 +5,11 @@ import './AdminBackLink.css';
 
 const AdminBackLink = () => {
   return (
-    <>
+    <div className='fond'>
       <Link to={'/admin'}>
         <Button className='custom-btn btn-9'>Admin</Button>
       </Link>
-    </>
+    </div>
   );
 };
 

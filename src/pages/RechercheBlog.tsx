@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios, { AxiosResponse } from 'axios';
 import { BlogType } from '../models/interface/Blog';
-// import ThumbnailEvent from '../components/ThumbnailEvent';
 import {
   Button,
   Card,
@@ -17,6 +16,7 @@ import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 import './Recherche.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Link } from 'react-router-dom';
 
 //Creation de variable tampon pour stocker les filtres actifs, les mettre à jour et déclencher ou non le filtrage global des events
 let listBlog: BlogType[] = [];
@@ -28,7 +28,9 @@ const SearchBlog = () => {
   const [activeFilters, setActiveFilters] = useState<string[]>([]);
   const [dateFilters, setDateFilters] = useState<string>('');
   const [searchFilters, setSearchFilters] = useState<string>('');
-
+  // const [show, setShow] = useState(false);
+  // const [article, setArticle] = useState<BlogType>();
+  // const [fullscreen, setFullscreen] = useState(true);
   // const [pictures, setPictures] = useState<string>();
 
   useEffect(() => {
@@ -99,7 +101,10 @@ const SearchBlog = () => {
   // };
 
   ////////////////////////////////////////////////////HANDLEFILTERS///////////////////////////////////////////////////////////////////////////////////
-
+  // const handleClick = (article: React.MouseEvent<HTMLButtonElement>) => {
+  //   setShow(true);
+  //   setFullscreen(true);
+  // };
   const handleInputSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     filterSearchBar = e.currentTarget.value;
     setSearchFilters(filterSearchBar);
@@ -187,7 +192,9 @@ const SearchBlog = () => {
         let convertMsjs = resultDiffDate / unJourEnMilliSec;
         // Si la différence entre inputDate et event.date [-5; 5] => true
 
-        return convertMsjs <= 5 && convertMsjs >= -5 && dateBlogMS > Date.now();
+        return (
+          convertMsjs <= 15 && convertMsjs >= -15 && dateBlogMS > Date.now()
+        );
 
         // Sinon => false
       });
@@ -207,7 +214,7 @@ const SearchBlog = () => {
       <div className='imageconteneur'>
         <img
           className='imageR'
-          src='assets/fleuve.jpg'
+          src='/assets/fleuve.jpg'
           alt='shaolin'
           data-aos='zoom-out'
           data-aos-duration='6000'
@@ -261,7 +268,7 @@ const SearchBlog = () => {
       <div style={{ margin: '3rem' }}>
         <h2 className='resultats center mb-4'>Articles</h2>
         <Row>
-          {blog.map(({ id, title, date, picture }) => (
+          {blog.map(({ id, title, date, picture, description }) => (
             <Col md={4} key={id} className='mb-4'>
               <Card style={{ height: '100%' }}>
                 {picture ? (
@@ -285,7 +292,9 @@ const SearchBlog = () => {
                   <Card.Text>Edité le : {date}</Card.Text>
                 </Card.Body>
                 <Card.Footer className='d-flex justify-content-center'>
-                  <button className='custom-btn btn-9'>Lire</button>
+                  <Link to={`/article/${id}`}>
+                    <button className='custom-btn btn-9'>Lire</button>
+                  </Link>
                 </Card.Footer>
               </Card>
             </Col>

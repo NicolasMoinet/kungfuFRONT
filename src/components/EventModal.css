@@ -30,7 +30,7 @@ p {
 
 .organisateur-block {
   padding: 1rem;
-  background: #aa7bc3;
+  background: #9a60af;
   display: flex;
   gap: 20px;
   align-items: center;
@@ -47,13 +47,16 @@ p {
   width: 75%;
   display: flex;
   flex-direction: column;
+  color: white;
 }
 
 .organisateur-name {
   font-weight: bold;
   font-size: 1.2em;
 }
-
+.white {
+  margin-top: 25px;
+}
 .event-content {
   display: flex;
   justify-content: space-between;
@@ -69,8 +72,9 @@ p {
   justify-content: space-around;
   font-size: medium;
   font-weight: 600;
-  background-image: url('/public/assets/image.jpg');
-
+  background-image: url('/public/assets/shao.png');
+  background-size: cover;
+  object-fit: fill;
   color: white;
   padding: 0;
 }
@@ -91,13 +95,14 @@ p {
   font-size: 1.1em;
   align-self: flex-end;
 }
-.modal.body {
-  padding: none !important;
+.modbody .event-content {
+  padding: 0px;
 }
 .event-description {
   /* margin-top: 10px; */
   padding: 1rem;
-  background: #aa7bc3;
+  background: #9a60af;
+  color: white;
 }
 
 .modal-footer {
@@ -114,38 +119,44 @@ p {
   .modal-footer-participant {
     font-size: 1.4em;
   }
-}
+  .white {
+    margin-top: 69px;
+  }
 
-.modal-btn,
-.modal-btn:active {
-  font-size: 1.5em;
-  background-color: #aa7bc3 !important;
-  border: none;
-}
+  .modal-btn,
+  .modal-btn:active {
+    font-size: 1.5em;
+    background-color: #9a60af !important;
+    border: none;
+  }
 
-.modal-btn:hover {
-  background: #242269 !important;
-}
+  .modal-btn:hover {
+    background: #242269 !important;
+  }
 
-.btn-participant,
-.btn-participant:active {
-  font-size: 0.9em;
-}
+  .btn-participant,
+  .btn-participant:active {
+    font-size: 0.9em;
+  }
 
-.event-message {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
+  .event-message {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 
-.event-message-success {
-  font-weight: bold;
-  background-color: #89e294;
-  border: none;
-  margin-bottom: 0;
-}
+  .event-message-success {
+    font-weight: bold;
+    background-color: #baf3c1;
+    border: none;
+    margin-bottom: 0;
+  }
 
-.blur {
-  /* filter: blur(2px); */
-  backdrop-filter: blur(10px);
+  .blur {
+    /* filter: blur(2px); */
+    backdrop-filter: blur(10px);
+  }
+  .black2 {
+    margin-bottom: 69px;
+  }
 }

@@ -16,15 +16,15 @@ h6 {
   padding-left: 50px;
   position: relative;
 }
-/* .hide-on-mobile {
-  display: none;
-} */
-.parallax {
+.hide-on-mobile {
+  /* display: none; */
+}
+/* .parallax {
   background-size: cover;
   background-position: center;
   background-image: none;
   height: 100vh;
-}
+} */
 
 .opponent {
   color: white;
@@ -34,7 +34,7 @@ h6 {
   margin-bottom: 15px;
 }
 .section-slogan {
-  background: #af88f4 !important;
+  background: #9a60af !important;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -68,7 +68,7 @@ h6 {
   font-weight: bolder;
   color: white;
   padding-left: 15px;
-  margin-top: 140px;
+  padding-top: 5vh;
   text-align: center;
 }
 .lireAM {
@@ -98,15 +98,16 @@ h6 {
   margin-right: 80px;
 }
 .contactLP {
-  height: 30vh;
+  height: 80vh;
   width: 80%;
-  margin: 50px;
+  margin-top: 100px;
+  margin-bottom: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   align-content: center;
-  background-color: #af88f4;
+  background-color: #9a60af;
   /* position: relative;
     right: 15vh;
     bottom: 15vh;
@@ -126,12 +127,12 @@ h6 {
   margin: 0;
 }
 .prez {
-  padding: 5px;
+  padding: 15px;
   display: flex;
   align-items: center;
   flex-direction: column;
   height: 40vh;
-  margin-bottom: 5px;
+  margin-bottom: 40vh;
   z-index: 300;
 }
 .blabla {
@@ -148,10 +149,39 @@ h6 {
   /* margin-right: 2rem; */
   margin-bottom: 15px;
 }
-
+/* .react-parallax-bgimage {
+  height: 1000px;
+  width: fit-content;
+  overflow: hidden;
+} */
+/* .hide-on-mobile {
+  height: 1000px;
+  width: cover;
+  overflow: hidden;
+} */
+.para {
+  margin-top: 100px;
+}
+.contactLP img {
+  position: absolute;
+  animation-name: rotation;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  width: 300px;
+  height: 300px;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
 @media (min-width: 768px) {
   .CardImg {
-    border-color: #af88f4;
+    border-color: #9a60af;
   }
   .ecole {
     font-size: 40px;
@@ -199,6 +229,7 @@ h6 {
     justify-content: center;
     align-content: center;
     align-items: center;
+    /* width: 100%; */
   }
   .Fond-head {
     position: relative;
@@ -213,7 +244,7 @@ h6 {
   .contactLP {
     height: 60vh;
     width: 65vh;
-    background-color: #aa7bc3;
+    background-color: #9a60af;
     /* background-image: url('/public/assets/dragon.png'); */
     background-size: cover;
     background-position: center;
@@ -302,7 +333,7 @@ h6 {
   }
 
   .section-slogan {
-    background: #aa7bc3 !important;
+    background: #9a60af !important;
     height: auto;
     width: 100%;
     display: flex;
@@ -317,7 +348,7 @@ h6 {
     align-items: baseline;
   }
   .section-page {
-    background: #af88f4 !important;
+    background: #9a60af !important;
     padding-bottom: 30px;
   }
   .text-slogan {
@@ -341,7 +372,7 @@ h6 {
     justify-content: space-between;
     text-align: center;
     align-items: center;
-    color: #aa7bc3;
+    color: #9a60af;
     margin-top: 60px;
     margin-bottom: 60px;
     padding: 30px;

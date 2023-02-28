@@ -278,20 +278,20 @@ const EventModal = ({
           {!isEditing ? (
             <>
               <div className='organisateur-block'>
-                <div className='organisateur-infos'>
+                <div className='organisateur-infos'color='white'>
                   <p>Organisateur : </p>
                   <p className='organisateur-name'>
                     {event?.organisateur.name}
                   </p>
                 </div>
               </div>
-              <Modal.Body>
+              <Modal.Body className='modbody'>
                 <div className='event-content'>
                   <div className='event-details'>
                     <div className='event-where'>
                       <p className='white'> Adresse : {event?.address}</p>
                       <p className='black'> Ville : {event?.city}</p>
-                      <p className='black'>
+                      <p className='black2'>
                         {' '}
                         Code postal : {event?.postalCode}
                       </p>
